@@ -1,0 +1,163 @@
+{
+  "apiVersion": 2,
+  "name": "chesta-slider/slider",
+  "version": "1.0.0",
+  "title": "Chesta Slider",
+  "category": "chesta-slider",
+  "icon": "slides",
+  "description": "A powerful, customizable slider with 25+ types and modern features.",
+  "keywords": ["slider", "carousel", "gallery", "slideshow"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    }
+  },
+  "attributes": {
+    "sliderType": {
+      "type": "string",
+      "default": "carousel"
+    },
+    "slidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 3000
+    },
+    "speed": {
+      "type": "number",
+      "default": 500
+    },
+    "infinite": {
+      "type": "boolean",
+      "default": true
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": true
+    },
+    "fade": {
+      "type": "boolean",
+      "default": false
+    },
+    "vertical": {
+      "type": "boolean",
+      "default": false
+    },
+    "centerMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "variableWidth": {
+      "type": "boolean",
+      "default": false
+    },
+    "lazyLoad": {
+      "type": "boolean",
+      "default": true
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": true
+    },
+    "pauseOnFocus": {
+      "type": "boolean",
+      "default": true
+    },
+    "accessibility": {
+      "type": "boolean",
+      "default": true
+    },
+    "swipe": {
+      "type": "boolean",
+      "default": true
+    },
+    "draggable": {
+      "type": "boolean",
+      "default": true
+    },
+    "rtl": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsive": {
+      "type": "array",
+      "default": []
+    },
+    "customCSS": {
+      "type": "string",
+      "default": ""
+    },
+    "sliderHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "sliderWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": ""
+    },
+    "arrowColor": {
+      "type": "string",
+      "default": ""
+    },
+    "dotColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": ""
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": ""
+    },
+    "margin": {
+      "type": "string",
+      "default": ""
+    },
+    "padding": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "providesContext": {
+    "chesta-slider/sliderType": "sliderType",
+    "chesta-slider/slidesToShow": "slidesToShow"
+  },
+  "usesContext": [],
+  "textdomain": "chesta-slider",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
+

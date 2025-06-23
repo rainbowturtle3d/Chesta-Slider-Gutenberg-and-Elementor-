@@ -1,0 +1,87 @@
+{
+  "apiVersion": 2,
+  "name": "chesta-slider/slide",
+  "version": "1.0.0",
+  "title": "Chesta Slide",
+  "category": "chesta-slider",
+  "icon": "format-image",
+  "description": "Individual slide for Chesta Slider with customizable content.",
+  "keywords": ["slide", "content", "image", "video"],
+  "parent": ["chesta-slider/slider"],
+  "supports": {
+    "html": false,
+    "reusable": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    }
+  },
+  "attributes": {
+    "slideType": {
+      "type": "string",
+      "default": "content"
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundPosition": {
+      "type": "string",
+      "default": "center center"
+    },
+    "backgroundSize": {
+      "type": "string",
+      "default": "cover"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.5
+    },
+    "verticalAlignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "horizontalAlignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "padding": {
+      "type": "string",
+      "default": ""
+    },
+    "margin": {
+      "type": "string",
+      "default": ""
+    },
+    "minHeight": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "usesContext": [
+    "chesta-slider/sliderType",
+    "chesta-slider/slidesToShow"
+  ],
+  "textdomain": "chesta-slider",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
+
