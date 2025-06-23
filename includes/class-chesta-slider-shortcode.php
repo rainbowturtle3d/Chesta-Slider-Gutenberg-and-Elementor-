@@ -43,9 +43,16 @@ class Chesta_Slider_Shortcode {
         add_shortcode('chesta_slider', array($this, 'render_slider_shortcode'));
         
         // Individual slider type shortcodes for convenience
-        $templates = $this->template_manager->get_templates();
-        foreach ($templates as $type => $template) {
-            add_shortcode("chesta_{$type}", array($this, 'render_specific_slider_shortcode'));
+        try {
+            $templates = $this->template_manager->get_templates();
+            if (is_array($templates)) {
+                foreach ($templates as $type => $template) {
+                    add_shortcode("chesta_{$type}", array($this, 'render_specific_slider_shortcode'));
+                }
+            }
+        } catch (Exception $e) {
+            // Log error but continue with basic shortcode registration
+            error_log('Chesta Slider: Error registering template shortcodes - ' . $e->getMessage());
         }
         
         // Legacy shortcode support

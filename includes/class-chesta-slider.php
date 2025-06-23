@@ -59,6 +59,9 @@ class Chesta_Slider {
         $this->define_public_hooks();
         $this->define_gutenberg_hooks();
         $this->define_elementor_hooks();
+        
+        // Initialize template system on init hook
+        $this->loader->add_action('init', $this, 'init_template_system');
         $this->define_widget_hooks();
     }
 
@@ -107,9 +110,12 @@ class Chesta_Slider {
 
         /**
          * Template manager and shortcode classes.
+         * Only load these when needed to prevent activation issues.
          */
-        require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-template-manager.php';
-        require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-shortcode.php';
+        if (did_action('init') || doing_action('init')) {
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-template-manager.php';
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-shortcode.php';
+        }
 
         /**
          * Widget classes.
@@ -117,7 +123,28 @@ class Chesta_Slider {
         require_once CHESTA_SLIDER_INCLUDES_DIR . 'widgets/class-chesta-slider-widget.php';
 
         $this->loader = new Chesta_Slider_Loader();
+    }
 
+    /**
+     * Define the locale for this plugin for internationalization.
+     */
+    private function set_locale() {
+        $plugin_i18n = new Chesta_Slider_i18n();
+        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+    }
+
+    /**
+     * Initialize template manager and shortcode system.
+     */
+    public function init_template_system() {
+        // Load template manager and shortcode classes if not already loaded
+        if (!class_exists('Chesta_Slider_Template_Manager')) {
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-template-manager.php';
+        }
+        if (!class_exists('Chesta_Slider_Shortcode')) {
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-shortcode.php';
+        }
+        
         // Initialize template manager with error handling
         global $chesta_slider_template_manager;
         try {
@@ -129,14 +156,6 @@ class Chesta_Slider {
             // Log error but don't break plugin activation
             error_log('Chesta Slider: Error initializing template manager - ' . $e->getMessage());
         }
-    }
-
-    /**
-     * Define the locale for this plugin for internationalization.
-     */
-    private function set_locale() {
-        $plugin_i18n = new Chesta_Slider_i18n();
-        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
     }
 
     /**
