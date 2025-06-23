@@ -146,15 +146,56 @@ class Chesta_Slider {
         }
         
         // Initialize template manager with error handling
-        global $chesta_slider_template_manager;
+        global $chesta_slider_template_manager, $chesta_slider_shortcode;
         try {
             $chesta_slider_template_manager = new Chesta_Slider_Template_Manager($this->plugin_name, $this->version);
             
             // Initialize shortcode system
-            new Chesta_Slider_Shortcode($chesta_slider_template_manager);
+            $chesta_slider_shortcode = new Chesta_Slider_Shortcode($chesta_slider_template_manager);
+            
+            // Initialize admin menu system
+            if (is_admin()) {
+                $this->init_admin_menu();
+            }
         } catch (Exception $e) {
             // Log error but don't break plugin activation
             error_log('Chesta Slider: Error initializing template manager - ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Initialize Gutenberg integration.
+     */
+    public function init_gutenberg_integration() {
+        global $chesta_slider_template_manager;
+        
+        if ($chesta_slider_template_manager) {
+            try {
+                $plugin_gutenberg = new Chesta_Slider_Gutenberg($this->plugin_name, $this->version, $chesta_slider_template_manager);
+                // Gutenberg hooks are initialized in the constructor
+            } catch (Exception $e) {
+                error_log('Chesta Slider: Error initializing Gutenberg integration - ' . $e->getMessage());
+            }
+        }
+    }
+
+    /**
+     * Initialize admin menu system.
+     */
+    public function init_admin_menu() {
+        global $chesta_slider_template_manager, $chesta_slider_shortcode;
+        
+        if ($chesta_slider_template_manager && $chesta_slider_shortcode) {
+            try {
+                // Load admin menu class
+                if (!class_exists('Chesta_Slider_Admin_Menu')) {
+                    require_once CHESTA_SLIDER_INCLUDES_DIR . 'admin/class-chesta-slider-admin-menu.php';
+                }
+                
+                new Chesta_Slider_Admin_Menu($this->plugin_name, $this->version, $chesta_slider_template_manager, $chesta_slider_shortcode);
+            } catch (Exception $e) {
+                error_log('Chesta Slider: Error initializing admin menu - ' . $e->getMessage());
+            }
         }
     }
 
@@ -186,11 +227,8 @@ class Chesta_Slider {
      * Register all of the hooks related to Gutenberg functionality.
      */
     private function define_gutenberg_hooks() {
-        $plugin_gutenberg = new Chesta_Slider_Gutenberg($this->get_plugin_name(), $this->get_version());
-
-        $this->loader->add_action('init', $plugin_gutenberg, 'register_blocks');
-        $this->loader->add_action('enqueue_block_editor_assets', $plugin_gutenberg, 'enqueue_block_editor_assets');
-        $this->loader->add_action('enqueue_block_assets', $plugin_gutenberg, 'enqueue_block_assets');
+        // Initialize Gutenberg integration after template system is ready
+        $this->loader->add_action('init', $this, 'init_gutenberg_integration', 20);
     }
 
     /**
