@@ -60,11 +60,333 @@
       "label": "Show Arrows",
       "description": "Display navigation arrows"
     },
+    "arrowType": {
+      "type": "select",
+      "default": "default",
+      "options": [
+        {"value": "default", "label": "Default"},
+        {"value": "circle", "label": "Circle"},
+        {"value": "square", "label": "Square"},
+        {"value": "minimal", "label": "Minimal"},
+        {"value": "custom", "label": "Custom"}
+      ],
+      "label": "Arrow Type",
+      "description": "Style of navigation arrows"
+    },
+    "arrowSize": {
+      "type": "number",
+      "default": 50,
+      "min": 30,
+      "max": 80,
+      "label": "Arrow Size (px)",
+      "description": "Size of navigation arrows"
+    },
+    "arrowColor": {
+      "type": "color",
+      "default": "#ffffff",
+      "label": "Arrow Color",
+      "description": "Color of navigation arrows"
+    },
+    "arrowBackground": {
+      "type": "color",
+      "default": "rgba(0,0,0,0.5)",
+      "label": "Arrow Background",
+      "description": "Background color of arrows"
+    },
+    "arrowPosition": {
+      "type": "select",
+      "default": "sides",
+      "options": [
+        {"value": "sides", "label": "Sides"},
+        {"value": "bottom", "label": "Bottom"},
+        {"value": "top", "label": "Top"},
+        {"value": "center", "label": "Center"}
+      ],
+      "label": "Arrow Position",
+      "description": "Position of navigation arrows"
+    },
+    "arrowFollowMouse": {
+      "type": "boolean",
+      "default": false,
+      "label": "Arrow Follow Mouse",
+      "description": "Arrows follow mouse movement"
+    },
     "dots": {
       "type": "boolean",
       "default": true,
       "label": "Show Dots",
       "description": "Display dot indicators"
+    },
+    "dotsType": {
+      "type": "select",
+      "default": "dots",
+      "options": [
+        {"value": "dots", "label": "Dots"},
+        {"value": "lines", "label": "Lines"},
+        {"value": "numbers", "label": "Numbers"},
+        {"value": "thumbnails", "label": "Thumbnails"},
+        {"value": "progress", "label": "Progress Bar"}
+      ],
+      "label": "Indicator Type",
+      "description": "Style of slide indicators"
+    },
+    "dotsPosition": {
+      "type": "select",
+      "default": "bottom-center",
+      "options": [
+        {"value": "bottom-center", "label": "Bottom Center"},
+        {"value": "bottom-left", "label": "Bottom Left"},
+        {"value": "bottom-right", "label": "Bottom Right"},
+        {"value": "top-center", "label": "Top Center"},
+        {"value": "left-center", "label": "Left Center"},
+        {"value": "right-center", "label": "Right Center"}
+      ],
+      "label": "Indicator Position",
+      "description": "Position of slide indicators"
+    },
+    "dotsColor": {
+      "type": "color",
+      "default": "#cccccc",
+      "label": "Indicator Color",
+      "description": "Color of inactive indicators"
+    },
+    "dotsActiveColor": {
+      "type": "color",
+      "default": "#007cba",
+      "label": "Active Indicator Color",
+      "description": "Color of active indicator"
+    },
+    "dotsSize": {
+      "type": "number",
+      "default": 12,
+      "min": 8,
+      "max": 24,
+      "label": "Indicator Size (px)",
+      "description": "Size of indicators"
+    },
+    "dotsGap": {
+      "type": "number",
+      "default": 8,
+      "min": 4,
+      "max": 20,
+      "label": "Indicator Gap (px)",
+      "description": "Space between indicators"
+    },
+    "transitionMode": {
+      "type": "select",
+      "default": "slide",
+      "options": [
+        {"value": "slide", "label": "Slide"},
+        {"value": "fade", "label": "Fade"},
+        {"value": "flip", "label": "Flip"},
+        {"value": "cube", "label": "3D Cube"},
+        {"value": "coverflow", "label": "Coverflow"}
+      ],
+      "label": "Transition Mode",
+      "description": "Animation style for slide transitions"
+    },
+    "easing": {
+      "type": "select",
+      "default": "ease",
+      "options": [
+        {"value": "ease", "label": "Ease"},
+        {"value": "ease-in", "label": "Ease In"},
+        {"value": "ease-out", "label": "Ease Out"},
+        {"value": "ease-in-out", "label": "Ease In Out"},
+        {"value": "linear", "label": "Linear"},
+        {"value": "bounce", "label": "Bounce"}
+      ],
+      "label": "Animation Easing",
+      "description": "Easing function for animations"
+    },
+    "height": {
+      "type": "responsive",
+      "default": {
+        "desktop": "400px",
+        "tablet": "350px",
+        "mobile": "300px"
+      },
+      "label": "Slider Height",
+      "description": "Height of slider for different devices"
+    },
+    "margin": {
+      "type": "spacing",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "20px",
+        "left": "0px"
+      },
+      "label": "Slider Margin",
+      "description": "Margin around the slider"
+    },
+    "padding": {
+      "type": "spacing",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "label": "Slider Padding",
+      "description": "Padding inside the slider"
+    },
+    "innerGap": {
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "label": "Inner Gap (px)",
+      "description": "Gap between slides"
+    },
+    "contentPosition": {
+      "type": "select",
+      "default": "bottom-left",
+      "options": [
+        {"value": "top-left", "label": "Top Left"},
+        {"value": "top-center", "label": "Top Center"},
+        {"value": "top-right", "label": "Top Right"},
+        {"value": "center-left", "label": "Center Left"},
+        {"value": "center-center", "label": "Center Center"},
+        {"value": "center-right", "label": "Center Right"},
+        {"value": "bottom-left", "label": "Bottom Left"},
+        {"value": "bottom-center", "label": "Bottom Center"},
+        {"value": "bottom-right", "label": "Bottom Right"}
+      ],
+      "label": "Content Position",
+      "description": "Position of text content on slides"
+    },
+    "titleAnimation": {
+      "type": "select",
+      "default": "fadeInUp",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "fadeIn", "label": "Fade In"},
+        {"value": "fadeInUp", "label": "Fade In Up"},
+        {"value": "fadeInDown", "label": "Fade In Down"},
+        {"value": "fadeInLeft", "label": "Fade In Left"},
+        {"value": "fadeInRight", "label": "Fade In Right"},
+        {"value": "slideInUp", "label": "Slide In Up"},
+        {"value": "slideInDown", "label": "Slide In Down"},
+        {"value": "zoomIn", "label": "Zoom In"},
+        {"value": "bounceIn", "label": "Bounce In"}
+      ],
+      "label": "Title Animation",
+      "description": "Animation for slide titles"
+    },
+    "titleDelay": {
+      "type": "number",
+      "default": 200,
+      "min": 0,
+      "max": 2000,
+      "step": 100,
+      "label": "Title Animation Delay (ms)",
+      "description": "Delay before title animation starts"
+    },
+    "titleDuration": {
+      "type": "number",
+      "default": 600,
+      "min": 200,
+      "max": 2000,
+      "step": 100,
+      "label": "Title Animation Duration (ms)",
+      "description": "Duration of title animation"
+    },
+    "descriptionAnimation": {
+      "type": "select",
+      "default": "fadeInUp",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "fadeIn", "label": "Fade In"},
+        {"value": "fadeInUp", "label": "Fade In Up"},
+        {"value": "fadeInDown", "label": "Fade In Down"},
+        {"value": "fadeInLeft", "label": "Fade In Left"},
+        {"value": "fadeInRight", "label": "Fade In Right"},
+        {"value": "slideInUp", "label": "Slide In Up"},
+        {"value": "slideInDown", "label": "Slide In Down"},
+        {"value": "zoomIn", "label": "Zoom In"},
+        {"value": "bounceIn", "label": "Bounce In"}
+      ],
+      "label": "Description Animation",
+      "description": "Animation for slide descriptions"
+    },
+    "descriptionDelay": {
+      "type": "number",
+      "default": 400,
+      "min": 0,
+      "max": 2000,
+      "step": 100,
+      "label": "Description Animation Delay (ms)",
+      "description": "Delay before description animation starts"
+    },
+    "descriptionDuration": {
+      "type": "number",
+      "default": 600,
+      "min": 200,
+      "max": 2000,
+      "step": 100,
+      "label": "Description Animation Duration (ms)",
+      "description": "Duration of description animation"
+    },
+    "buttonAnimation": {
+      "type": "select",
+      "default": "fadeInUp",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "fadeIn", "label": "Fade In"},
+        {"value": "fadeInUp", "label": "Fade In Up"},
+        {"value": "fadeInDown", "label": "Fade In Down"},
+        {"value": "fadeInLeft", "label": "Fade In Left"},
+        {"value": "fadeInRight", "label": "Fade In Right"},
+        {"value": "slideInUp", "label": "Slide In Up"},
+        {"value": "slideInDown", "label": "Slide In Down"},
+        {"value": "zoomIn", "label": "Zoom In"},
+        {"value": "bounceIn", "label": "Bounce In"}
+      ],
+      "label": "Button Animation",
+      "description": "Animation for slide buttons"
+    },
+    "buttonDelay": {
+      "type": "number",
+      "default": 600,
+      "min": 0,
+      "max": 2000,
+      "step": 100,
+      "label": "Button Animation Delay (ms)",
+      "description": "Delay before button animation starts"
+    },
+    "buttonDuration": {
+      "type": "number",
+      "default": 600,
+      "min": 200,
+      "max": 2000,
+      "step": 100,
+      "label": "Button Animation Duration (ms)",
+      "description": "Duration of button animation"
+    },
+    "mouseWheel": {
+      "type": "boolean",
+      "default": false,
+      "label": "Mouse Wheel Navigation",
+      "description": "Enable slide navigation with mouse wheel"
+    },
+    "mouseDrag": {
+      "type": "boolean",
+      "default": true,
+      "label": "Mouse Drag",
+      "description": "Enable slide navigation with mouse drag"
+    },
+    "touchSwipe": {
+      "type": "boolean",
+      "default": true,
+      "label": "Touch Swipe",
+      "description": "Enable slide navigation with touch swipe"
+    },
+    "keyboard": {
+      "type": "boolean",
+      "default": true,
+      "label": "Keyboard Navigation",
+      "description": "Enable slide navigation with keyboard arrows"
     },
     "pauseOnHover": {
       "type": "boolean",
@@ -75,11 +397,31 @@
         "autoplay": true
       }
     },
+    "pauseOnFocus": {
+      "type": "boolean",
+      "default": true,
+      "label": "Pause on Focus",
+      "description": "Pause autoplay when slider is focused",
+      "condition": {
+        "autoplay": true
+      }
+    },
     "centerMode": {
       "type": "boolean",
       "default": false,
       "label": "Center Mode",
       "description": "Center active slide with partial view of others"
+    },
+    "centerPadding": {
+      "type": "number",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "label": "Center Padding (px)",
+      "description": "Padding for center mode",
+      "condition": {
+        "centerMode": true
+      }
     },
     "variableWidth": {
       "type": "boolean",
@@ -92,6 +434,38 @@
       "default": true,
       "label": "Lazy Loading",
       "description": "Load images only when needed"
+    },
+    "preloadImages": {
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 5,
+      "label": "Preload Images",
+      "description": "Number of images to preload"
+    },
+    "accessibility": {
+      "type": "boolean",
+      "default": true,
+      "label": "Accessibility",
+      "description": "Enable accessibility features"
+    },
+    "rtl": {
+      "type": "boolean",
+      "default": false,
+      "label": "RTL Support",
+      "description": "Enable right-to-left language support"
+    },
+    "customCSS": {
+      "type": "textarea",
+      "default": "",
+      "label": "Custom CSS",
+      "description": "Add custom CSS styles"
+    },
+    "customJS": {
+      "type": "textarea",
+      "default": "",
+      "label": "Custom JavaScript",
+      "description": "Add custom JavaScript code"
     }
   },
   "responsive": {
