@@ -1,0 +1,470 @@
+/**
+ * Gutenberg Block Frontend Styles for Chesta Slider
+ * Styles that appear on both editor and frontend
+ */
+
+/* Base Block Styles */
+.wp-block-chesta-slider {
+    margin: 20px 0;
+    position: relative;
+}
+
+.wp-block-chesta-slider.alignwide {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.wp-block-chesta-slider.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+}
+
+/* Slider Container */
+.chesta-slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Slide Styles */
+.chesta-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.chesta-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.chesta-slide:hover::before {
+    opacity: 0.5;
+}
+
+/* Slide Content */
+.chesta-slide-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chesta-slide-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.chesta-slide-description {
+    font-size: 1.2rem;
+    margin: 0 0 30px 0;
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.chesta-slide-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #007cba 0%, #005a87 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 124, 186, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.chesta-slide-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 124, 186, 0.4);
+    background: linear-gradient(135deg, #005a87 0%, #007cba 100%);
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation Arrows */
+.chesta-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chesta-slider-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chesta-slider-arrow-prev {
+    left: 20px;
+}
+
+.chesta-slider-arrow-next {
+    right: 20px;
+}
+
+.chesta-slider-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+}
+
+/* Arrow Types */
+.chesta-slider-arrow.arrow-circle {
+    border-radius: 50%;
+}
+
+.chesta-slider-arrow.arrow-square {
+    border-radius: 8px;
+}
+
+.chesta-slider-arrow.arrow-minimal {
+    background: transparent;
+    box-shadow: none;
+}
+
+.chesta-slider-arrow.arrow-minimal svg {
+    fill: white;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Dots Navigation */
+.chesta-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.chesta-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chesta-slider-dot:hover,
+.chesta-slider-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Dots Types */
+.chesta-slider-dots.dots-lines .chesta-slider-dot {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.chesta-slider-dots.dots-numbers .chesta-slider-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chesta-slider-dots.dots-progress {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.chesta-slider-dots.dots-progress .chesta-slider-progress-bar {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Content Positioning */
+.chesta-slide-content.position-top-left {
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 0;
+}
+
+.chesta-slide-content.position-top-center {
+    text-align: center;
+    align-self: flex-start;
+}
+
+.chesta-slide-content.position-top-right {
+    text-align: right;
+    align-self: flex-start;
+    margin-right: 0;
+}
+
+.chesta-slide-content.position-center-left {
+    text-align: left;
+    align-self: center;
+    margin-left: 0;
+}
+
+.chesta-slide-content.position-center-center {
+    text-align: center;
+    align-self: center;
+}
+
+.chesta-slide-content.position-center-right {
+    text-align: right;
+    align-self: center;
+    margin-right: 0;
+}
+
+.chesta-slide-content.position-bottom-left {
+    text-align: left;
+    align-self: flex-end;
+    margin-left: 0;
+}
+
+.chesta-slide-content.position-bottom-center {
+    text-align: center;
+    align-self: flex-end;
+}
+
+.chesta-slide-content.position-bottom-right {
+    text-align: right;
+    align-self: flex-end;
+    margin-right: 0;
+}
+
+/* Animation Classes */
+.chesta-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.chesta-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chesta-animate.fadeInUp {
+    transform: translateY(30px);
+}
+
+.chesta-animate.fadeInDown {
+    transform: translateY(-30px);
+}
+
+.chesta-animate.fadeInLeft {
+    transform: translateX(-30px);
+}
+
+.chesta-animate.fadeInRight {
+    transform: translateX(30px);
+}
+
+.chesta-animate.zoomIn {
+    transform: scale(0.8);
+}
+
+.chesta-animate.rotateIn {
+    transform: rotate(-10deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chesta-slide-title {
+        font-size: 2rem;
+    }
+    
+    .chesta-slide-description {
+        font-size: 1rem;
+    }
+    
+    .chesta-slide-content {
+        padding: 30px 15px;
+    }
+    
+    .chesta-slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .chesta-slider-arrow-prev {
+        left: 10px;
+    }
+    
+    .chesta-slider-arrow-next {
+        right: 10px;
+    }
+    
+    .chesta-slider-dots {
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chesta-slide-title {
+        font-size: 1.5rem;
+    }
+    
+    .chesta-slide-description {
+        font-size: 0.9rem;
+    }
+    
+    .chesta-slide-button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .chesta-slider-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .chesta-slider-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Loading State */
+.chesta-slider-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.chesta-slider-loading::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #007cba;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Error State */
+.chesta-slider-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: #f8f9fa;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    color: #666;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Accessibility */
+.chesta-slider-container:focus-within {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+.chesta-slider-arrow:focus,
+.chesta-slider-dot:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .chesta-slide::before {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .chesta-slider-arrow {
+        background: white;
+        border: 2px solid #000;
+    }
+    
+    .chesta-slider-dot {
+        background: white;
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .chesta-animate,
+    .chesta-slider-arrow,
+    .chesta-slider-dot,
+    .chesta-slide-button {
+        transition: none;
+    }
+    
+    .chesta-slider-container * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .chesta-slider-arrow,
+    .chesta-slider-dots {
+        display: none;
+    }
+    
+    .chesta-slide {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
