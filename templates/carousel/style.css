@@ -1,43 +1,61 @@
 /**
  * Carousel Slider Styles
- * Classic horizontal carousel with smooth transitions
+ * Premium quality responsive carousel with extensive customization
  */
 
-.chesta-carousel {
+/* Base Slider Styles */
+.chesta-slider {
     position: relative;
-    overflow: hidden;
-    background: transparent;
-}
-
-.chesta-carousel .chesta-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-}
-
-.chesta-carousel-slide {
-    flex: 0 0 auto;
     width: 100%;
-    position: relative;
-    outline: none;
+    margin: var(--chesta-margin-top, 0) var(--chesta-margin-right, 0) var(--chesta-margin-bottom, 20px) var(--chesta-margin-left, 0);
+    padding: var(--chesta-padding-top, 0) var(--chesta-padding-right, 0) var(--chesta-padding-bottom, 0) var(--chesta-padding-left, 0);
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.chesta-carousel-slide .chesta-slide-content {
+/* Carousel Container */
+.chesta-carousel-container {
     position: relative;
-    display: block;
+    width: 100%;
+    height: var(--chesta-height-desktop, 400px);
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Individual Slides */
+.chesta-slide {
+    position: relative;
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--chesta-inner-gap, 0);
 }
 
-.chesta-carousel-slide .chesta-slide-image {
+.chesta-slide-content {
     position: relative;
     width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.chesta-carousel-slide .chesta-slide-image img {
+/* Image Styles */
+.chesta-slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.chesta-slide-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -45,7 +63,7 @@
     transition: transform 0.3s ease;
 }
 
-.chesta-carousel-slide:hover .chesta-slide-image img {
+.chesta-slide:hover .chesta-slide-image img {
     transform: scale(1.05);
 }
 
