@@ -59,6 +59,10 @@ class Chesta_Slider {
         $this->define_public_hooks();
         $this->define_gutenberg_hooks();
         $this->define_elementor_hooks();
+        
+        // Initialize template system on init hook
+        $this->loader->add_action('init', $this, 'init_template_system');
+        $this->define_widget_hooks();
     }
 
     /**
@@ -104,6 +108,20 @@ class Chesta_Slider {
         require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-security.php';
         require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-performance.php';
 
+        /**
+         * Template manager and shortcode classes.
+         * Only load these when needed to prevent activation issues.
+         */
+        if (did_action('init') || doing_action('init')) {
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-template-manager.php';
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-shortcode.php';
+        }
+
+        /**
+         * Widget classes.
+         */
+        require_once CHESTA_SLIDER_INCLUDES_DIR . 'widgets/class-chesta-slider-widget.php';
+
         $this->loader = new Chesta_Slider_Loader();
     }
 
@@ -113,6 +131,31 @@ class Chesta_Slider {
     private function set_locale() {
         $plugin_i18n = new Chesta_Slider_i18n();
         $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+    }
+
+    /**
+     * Initialize template manager and shortcode system.
+     */
+    public function init_template_system() {
+        // Load template manager and shortcode classes if not already loaded
+        if (!class_exists('Chesta_Slider_Template_Manager')) {
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-template-manager.php';
+        }
+        if (!class_exists('Chesta_Slider_Shortcode')) {
+            require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-shortcode.php';
+        }
+        
+        // Initialize template manager with error handling
+        global $chesta_slider_template_manager;
+        try {
+            $chesta_slider_template_manager = new Chesta_Slider_Template_Manager($this->plugin_name, $this->version);
+            
+            // Initialize shortcode system
+            new Chesta_Slider_Shortcode($chesta_slider_template_manager);
+        } catch (Exception $e) {
+            // Log error but don't break plugin activation
+            error_log('Chesta Slider: Error initializing template manager - ' . $e->getMessage());
+        }
     }
 
     /**
@@ -161,6 +204,22 @@ class Chesta_Slider {
     }
 
     /**
+     * Register all of the hooks related to WordPress widgets.
+     */
+    private function define_widget_hooks() {
+        $this->loader->add_action('widgets_init', $this, 'register_widgets');
+    }
+
+    /**
+     * Register WordPress widgets.
+     */
+    public function register_widgets() {
+        if (class_exists('Chesta_Slider_Widget')) {
+            register_widget('Chesta_Slider_Widget');
+        }
+    }
+
+    /**
      * Run the loader to execute all of the hooks with WordPress.
      */
     public function run() {
@@ -189,4 +248,3 @@ class Chesta_Slider {
         return $this->version;
     }
 }
-

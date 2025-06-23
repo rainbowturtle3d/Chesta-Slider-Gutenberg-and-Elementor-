@@ -37,18 +37,42 @@ import SliderPreview from './preview';
 const ALLOWED_BLOCKS = ['chesta-slider/slide'];
 
 const SLIDER_TYPES = [
-    { label: __('Carousel', 'chesta-slider'), value: 'carousel' },
-    { label: __('Fade', 'chesta-slider'), value: 'fade' },
-    { label: __('Hero Slider', 'chesta-slider'), value: 'hero' },
-    { label: __('Vertical', 'chesta-slider'), value: 'vertical' },
-    { label: __('Thumbnail Navigation', 'chesta-slider'), value: 'thumbnail' },
-    { label: __('Testimonial', 'chesta-slider'), value: 'testimonial' },
-    { label: __('Logo Carousel', 'chesta-slider'), value: 'logo' },
-    { label: __('Product Slider', 'chesta-slider'), value: 'product' },
-    { label: __('Video Slider', 'chesta-slider'), value: 'video' },
-    { label: __('Parallax', 'chesta-slider'), value: 'parallax' },
-    { label: __('Multi-row', 'chesta-slider'), value: 'multirow' },
-    { label: __('Center Mode', 'chesta-slider'), value: 'center' },
+    // Basic Sliders
+    { label: __('Carousel', 'chesta-slider'), value: 'carousel', category: 'basic' },
+    { label: __('Fade', 'chesta-slider'), value: 'fade', category: 'basic' },
+    { label: __('Vertical', 'chesta-slider'), value: 'vertical', category: 'basic' },
+    { label: __('Image Gallery', 'chesta-slider'), value: 'gallery', category: 'basic' },
+    
+    // Advanced Sliders
+    { label: __('Hero Slider', 'chesta-slider'), value: 'hero', category: 'advanced' },
+    { label: __('Parallax', 'chesta-slider'), value: 'parallax', category: 'advanced' },
+    { label: __('Thumbnail Navigation', 'chesta-slider'), value: 'thumbnail', category: 'advanced' },
+    { label: __('Center Mode', 'chesta-slider'), value: 'center', category: 'advanced' },
+    { label: __('Multi-row', 'chesta-slider'), value: 'multirow', category: 'advanced' },
+    { label: __('Variable Width', 'chesta-slider'), value: 'variable', category: 'advanced' },
+    
+    // Content-Specific Sliders
+    { label: __('Testimonial', 'chesta-slider'), value: 'testimonial', category: 'content' },
+    { label: __('Logo Carousel', 'chesta-slider'), value: 'logo', category: 'content' },
+    { label: __('Product Slider', 'chesta-slider'), value: 'product', category: 'content' },
+    { label: __('Video Slider', 'chesta-slider'), value: 'video', category: 'content' },
+    { label: __('Post Slider', 'chesta-slider'), value: 'post', category: 'content' },
+    { label: __('Portfolio', 'chesta-slider'), value: 'portfolio', category: 'content' },
+    
+    // Interactive Sliders
+    { label: __('3D Cube', 'chesta-slider'), value: 'cube', category: 'interactive' },
+    { label: __('Flip', 'chesta-slider'), value: 'flip', category: 'interactive' },
+    { label: __('Coverflow', 'chesta-slider'), value: 'coverflow', category: 'interactive' },
+    { label: __('Cards', 'chesta-slider'), value: 'cards', category: 'interactive' },
+    { label: __('Countdown', 'chesta-slider'), value: 'countdown', category: 'interactive' },
+    { label: __('CTA Slider', 'chesta-slider'), value: 'cta', category: 'interactive' },
+    
+    // Specialized Sliders
+    { label: __('Timeline', 'chesta-slider'), value: 'timeline', category: 'specialized' },
+    { label: __('Before/After', 'chesta-slider'), value: 'comparison', category: 'specialized' },
+    { label: __('Pricing Table', 'chesta-slider'), value: 'pricing', category: 'specialized' },
+    { label: __('Team Members', 'chesta-slider'), value: 'team', category: 'specialized' },
+    { label: __('News Ticker', 'chesta-slider'), value: 'news', category: 'specialized' },
 ];
 
 const RESPONSIVE_BREAKPOINTS = [
@@ -579,4 +603,3 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         </>
     );
 }
-
