@@ -59,6 +59,7 @@ class Chesta_Slider {
         $this->define_public_hooks();
         $this->define_gutenberg_hooks();
         $this->define_elementor_hooks();
+        $this->define_widget_hooks();
     }
 
     /**
@@ -104,7 +105,30 @@ class Chesta_Slider {
         require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-security.php';
         require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-performance.php';
 
+        /**
+         * Template manager and shortcode classes.
+         */
+        require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-template-manager.php';
+        require_once CHESTA_SLIDER_INCLUDES_DIR . 'class-chesta-slider-shortcode.php';
+
+        /**
+         * Widget classes.
+         */
+        require_once CHESTA_SLIDER_INCLUDES_DIR . 'widgets/class-chesta-slider-widget.php';
+
         $this->loader = new Chesta_Slider_Loader();
+
+        // Initialize template manager with error handling
+        global $chesta_slider_template_manager;
+        try {
+            $chesta_slider_template_manager = new Chesta_Slider_Template_Manager($this->plugin_name, $this->version);
+            
+            // Initialize shortcode system
+            new Chesta_Slider_Shortcode($chesta_slider_template_manager);
+        } catch (Exception $e) {
+            // Log error but don't break plugin activation
+            error_log('Chesta Slider: Error initializing template manager - ' . $e->getMessage());
+        }
     }
 
     /**
@@ -161,6 +185,22 @@ class Chesta_Slider {
     }
 
     /**
+     * Register all of the hooks related to WordPress widgets.
+     */
+    private function define_widget_hooks() {
+        $this->loader->add_action('widgets_init', $this, 'register_widgets');
+    }
+
+    /**
+     * Register WordPress widgets.
+     */
+    public function register_widgets() {
+        if (class_exists('Chesta_Slider_Widget')) {
+            register_widget('Chesta_Slider_Widget');
+        }
+    }
+
+    /**
      * Run the loader to execute all of the hooks with WordPress.
      */
     public function run() {
@@ -189,4 +229,3 @@ class Chesta_Slider {
         return $this->version;
     }
 }
-

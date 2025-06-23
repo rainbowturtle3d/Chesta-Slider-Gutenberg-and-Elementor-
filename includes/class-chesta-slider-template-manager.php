@@ -50,7 +50,29 @@ class Chesta_Slider_Template_Manager {
     public function __construct($plugin_name, $version) {
         $this->plugin_name = $plugin_name;
         $this->version = $version;
+        $this->ensure_directories();
         $this->load_templates();
+    }
+
+    /**
+     * Check and create required directories.
+     */
+    private function ensure_directories() {
+        $required_dirs = array(
+            CHESTA_SLIDER_PLUGIN_DIR . 'templates',
+            CHESTA_SLIDER_PLUGIN_DIR . 'includes',
+            CHESTA_SLIDER_PLUGIN_DIR . 'includes/widgets',
+            CHESTA_SLIDER_PLUGIN_DIR . 'includes/admin',
+            CHESTA_SLIDER_PLUGIN_DIR . 'includes/public',
+            CHESTA_SLIDER_PLUGIN_DIR . 'includes/gutenberg',
+            CHESTA_SLIDER_PLUGIN_DIR . 'includes/elementor',
+        );
+
+        foreach ($required_dirs as $dir) {
+            if (!file_exists($dir)) {
+                wp_mkdir_p($dir);
+            }
+        }
     }
 
     /**
@@ -310,6 +332,12 @@ class Chesta_Slider_Template_Manager {
     public function render_template($template_type, $args = array()) {
         $template_file = CHESTA_SLIDER_PLUGIN_DIR . "templates/{$template_type}/template.php";
         
+        // Check if template directory exists
+        $template_dir = dirname($template_file);
+        if (!file_exists($template_dir)) {
+            wp_mkdir_p($template_dir);
+        }
+        
         if (!file_exists($template_file)) {
             return $this->render_fallback_template($args);
         }
@@ -320,8 +348,13 @@ class Chesta_Slider_Template_Manager {
         // Start output buffering
         ob_start();
         
-        // Include template file
-        include $template_file;
+        // Include template file with error handling
+        try {
+            include $template_file;
+        } catch (Exception $e) {
+            ob_end_clean();
+            return $this->render_fallback_template($args);
+        }
         
         // Get output and clean buffer
         $output = ob_get_clean();
@@ -355,7 +388,36 @@ class Chesta_Slider_Template_Manager {
      * @return string Fallback template HTML.
      */
     private function render_fallback_template($args) {
-        return $this->render_template('carousel', $args);
+        // Simple fallback HTML to prevent infinite recursion
+        $slider_id = $args['slider_id'] ?? 'chesta-fallback-' . wp_rand();
+        $slides = $args['slides'] ?? $this->get_default_demo_data()['slides'];
+        
+        $html = '<div id="' . esc_attr($slider_id) . '" class="chesta-slider chesta-fallback">';
+        $html .= '<div class="chesta-fallback-message">';
+        $html .= '<p>' . __('Slider template not found. Please check your slider configuration.', 'chesta-slider') . '</p>';
+        $html .= '</div>';
+        
+        if (!empty($slides)) {
+            $html .= '<div class="chesta-fallback-slides">';
+            foreach ($slides as $index => $slide) {
+                $html .= '<div class="chesta-fallback-slide">';
+                if (!empty($slide['image']['url'])) {
+                    $html .= '<img src="' . esc_url($slide['image']['url']) . '" alt="' . esc_attr($slide['title'] ?? '') . '">';
+                }
+                if (!empty($slide['title'])) {
+                    $html .= '<h3>' . esc_html($slide['title']) . '</h3>';
+                }
+                if (!empty($slide['description'])) {
+                    $html .= '<p>' . esc_html($slide['description']) . '</p>';
+                }
+                $html .= '</div>';
+            }
+            $html .= '</div>';
+        }
+        
+        $html .= '</div>';
+        
+        return $html;
     }
 
     /**
