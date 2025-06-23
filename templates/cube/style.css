@@ -1,0 +1,476 @@
+/**
+ * 3D Cube Slider Styles
+ * Stunning 3D cube transitions with perspective effects
+ */
+
+.chesta-cube {
+    position: relative;
+    overflow: hidden;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+}
+
+.chesta-cube-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.chesta-cube-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.chesta-cube-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.chesta-cube-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+}
+
+/* Cube positioning for different slides */
+.chesta-cube-slide:nth-child(1) {
+    transform: rotateY(0deg) translateZ(250px);
+}
+
+.chesta-cube-slide:nth-child(2) {
+    transform: rotateY(90deg) translateZ(250px);
+}
+
+.chesta-cube-slide:nth-child(3) {
+    transform: rotateY(180deg) translateZ(250px);
+}
+
+.chesta-cube-slide:nth-child(4) {
+    transform: rotateY(270deg) translateZ(250px);
+}
+
+.chesta-cube-slide:nth-child(5) {
+    transform: rotateY(360deg) translateZ(250px);
+}
+
+.chesta-cube-slide:nth-child(6) {
+    transform: rotateY(450deg) translateZ(250px);
+}
+
+/* Image Styling */
+.chesta-cube-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.chesta-cube-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.chesta-cube-slide:hover .chesta-cube-image img {
+    transform: scale(1.05);
+}
+
+/* Content Overlay */
+.chesta-cube-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.chesta-cube-slide.chesta-active .chesta-cube-content,
+.chesta-cube-slide:hover .chesta-cube-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.chesta-cube-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.chesta-cube-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+}
+
+.chesta-cube-actions {
+    margin-top: 1rem;
+}
+
+.chesta-cube-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    background: #007cba;
+    color: white;
+}
+
+.chesta-cube-button:hover {
+    background: #005a87;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 124, 186, 0.3);
+}
+
+/* Badge */
+.chesta-cube-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ff6b6b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 3;
+    transform: rotate(3deg);
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Shadow Effect */
+.chesta-cube-shadow {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3), transparent);
+    border-radius: 50%;
+    transition: all 0.8s ease;
+}
+
+/* Navigation Arrows */
+.chesta-cube .chesta-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chesta-cube .chesta-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chesta-cube .chesta-prev {
+    left: 20px;
+}
+
+.chesta-cube .chesta-next {
+    right: 20px;
+}
+
+/* Dots Navigation */
+.chesta-cube .chesta-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.chesta-cube .chesta-dots li {
+    margin: 0;
+}
+
+.chesta-cube .chesta-dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0;
+}
+
+.chesta-cube .chesta-dots .chesta-active button,
+.chesta-cube .chesta-dots button:hover {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Cube Rotation States */
+.chesta-cube[data-current="0"] .chesta-cube-wrapper {
+    transform: rotateY(0deg);
+}
+
+.chesta-cube[data-current="1"] .chesta-cube-wrapper {
+    transform: rotateY(-90deg);
+}
+
+.chesta-cube[data-current="2"] .chesta-cube-wrapper {
+    transform: rotateY(-180deg);
+}
+
+.chesta-cube[data-current="3"] .chesta-cube-wrapper {
+    transform: rotateY(-270deg);
+}
+
+.chesta-cube[data-current="4"] .chesta-cube-wrapper {
+    transform: rotateY(-360deg);
+}
+
+.chesta-cube[data-current="5"] .chesta-cube-wrapper {
+    transform: rotateY(-450deg);
+}
+
+/* Slide Shadows */
+.chesta-cube-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent, rgba(0, 0, 0, 0.2));
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.chesta-cube-slide.chesta-transitioning::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .chesta-cube {
+        perspective: 1000px;
+    }
+    
+    .chesta-cube-slide:nth-child(1),
+    .chesta-cube-slide:nth-child(2),
+    .chesta-cube-slide:nth-child(3),
+    .chesta-cube-slide:nth-child(4),
+    .chesta-cube-slide:nth-child(5),
+    .chesta-cube-slide:nth-child(6) {
+        transform: rotateY(0deg) translateZ(200px);
+    }
+    
+    .chesta-cube-slide:nth-child(2) {
+        transform: rotateY(90deg) translateZ(200px);
+    }
+    
+    .chesta-cube-slide:nth-child(3) {
+        transform: rotateY(180deg) translateZ(200px);
+    }
+    
+    .chesta-cube-slide:nth-child(4) {
+        transform: rotateY(270deg) translateZ(200px);
+    }
+}
+
+@media (max-width: 768px) {
+    .chesta-cube {
+        perspective: 800px;
+    }
+    
+    .chesta-cube-content {
+        padding: 1.5rem;
+    }
+    
+    .chesta-cube-title {
+        font-size: 1.25rem;
+    }
+    
+    .chesta-cube .chesta-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .chesta-cube .chesta-prev {
+        left: 10px;
+    }
+    
+    .chesta-cube .chesta-next {
+        right: 10px;
+    }
+    
+    .chesta-cube-slide:nth-child(1),
+    .chesta-cube-slide:nth-child(2),
+    .chesta-cube-slide:nth-child(3),
+    .chesta-cube-slide:nth-child(4),
+    .chesta-cube-slide:nth-child(5),
+    .chesta-cube-slide:nth-child(6) {
+        transform: rotateY(0deg) translateZ(150px);
+    }
+    
+    .chesta-cube-slide:nth-child(2) {
+        transform: rotateY(90deg) translateZ(150px);
+    }
+    
+    .chesta-cube-slide:nth-child(3) {
+        transform: rotateY(180deg) translateZ(150px);
+    }
+    
+    .chesta-cube-slide:nth-child(4) {
+        transform: rotateY(270deg) translateZ(150px);
+    }
+}
+
+@media (max-width: 480px) {
+    .chesta-cube {
+        perspective: 600px;
+    }
+    
+    .chesta-cube-content {
+        padding: 1rem;
+    }
+    
+    .chesta-cube-title {
+        font-size: 1.1rem;
+    }
+    
+    .chesta-cube-description {
+        font-size: 0.9rem;
+    }
+    
+    .chesta-cube-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .chesta-cube .chesta-arrow {
+        display: none;
+    }
+    
+    .chesta-cube-slide:nth-child(1),
+    .chesta-cube-slide:nth-child(2),
+    .chesta-cube-slide:nth-child(3),
+    .chesta-cube-slide:nth-child(4),
+    .chesta-cube-slide:nth-child(5),
+    .chesta-cube-slide:nth-child(6) {
+        transform: rotateY(0deg) translateZ(100px);
+    }
+    
+    .chesta-cube-slide:nth-child(2) {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+    
+    .chesta-cube-slide:nth-child(3) {
+        transform: rotateY(180deg) translateZ(100px);
+    }
+    
+    .chesta-cube-slide:nth-child(4) {
+        transform: rotateY(270deg) translateZ(100px);
+    }
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: reduce) {
+    .chesta-cube-wrapper {
+        transition: none;
+    }
+    
+    .chesta-cube-content {
+        transform: translateY(0);
+        opacity: 1;
+        transition: none;
+    }
+    
+    .chesta-cube-image img {
+        transition: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .chesta-cube-face {
+        background: #1a1a1a;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .chesta-cube .chesta-arrow {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .chesta-cube {
+        perspective: none;
+    }
+    
+    .chesta-cube-wrapper {
+        transform: none;
+    }
+    
+    .chesta-cube-slide {
+        position: relative;
+        transform: none;
+        page-break-inside: avoid;
+    }
+    
+    .chesta-cube .chesta-arrow,
+    .chesta-cube .chesta-dots {
+        display: none;
+    }
+}

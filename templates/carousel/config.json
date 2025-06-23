@@ -1,0 +1,182 @@
+{
+  "name": "Carousel",
+  "description": "Classic horizontal carousel with smooth transitions",
+  "category": "basic",
+  "icon": "slides",
+  "preview": "carousel-preview.jpg",
+  "settings": {
+    "slidesToShow": {
+      "type": "number",
+      "default": 1,
+      "min": 1,
+      "max": 6,
+      "label": "Slides to Show",
+      "description": "Number of slides visible at once"
+    },
+    "slidesToScroll": {
+      "type": "number",
+      "default": 1,
+      "min": 1,
+      "max": 6,
+      "label": "Slides to Scroll",
+      "description": "Number of slides to scroll per action"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false,
+      "label": "Autoplay",
+      "description": "Enable automatic sliding"
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 3000,
+      "min": 1000,
+      "max": 10000,
+      "step": 500,
+      "label": "Autoplay Speed (ms)",
+      "description": "Time between automatic slides",
+      "condition": {
+        "autoplay": true
+      }
+    },
+    "speed": {
+      "type": "number",
+      "default": 500,
+      "min": 100,
+      "max": 2000,
+      "step": 100,
+      "label": "Animation Speed (ms)",
+      "description": "Duration of slide transitions"
+    },
+    "infinite": {
+      "type": "boolean",
+      "default": true,
+      "label": "Infinite Loop",
+      "description": "Enable continuous scrolling"
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true,
+      "label": "Show Arrows",
+      "description": "Display navigation arrows"
+    },
+    "dots": {
+      "type": "boolean",
+      "default": true,
+      "label": "Show Dots",
+      "description": "Display dot indicators"
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": true,
+      "label": "Pause on Hover",
+      "description": "Pause autoplay when hovering",
+      "condition": {
+        "autoplay": true
+      }
+    },
+    "centerMode": {
+      "type": "boolean",
+      "default": false,
+      "label": "Center Mode",
+      "description": "Center active slide with partial view of others"
+    },
+    "variableWidth": {
+      "type": "boolean",
+      "default": false,
+      "label": "Variable Width",
+      "description": "Allow slides to have different widths"
+    },
+    "lazyLoad": {
+      "type": "boolean",
+      "default": true,
+      "label": "Lazy Loading",
+      "description": "Load images only when needed"
+    }
+  },
+  "responsive": {
+    "tablet": {
+      "breakpoint": 768,
+      "settings": {
+        "slidesToShow": 1,
+        "arrows": true,
+        "dots": true
+      }
+    },
+    "mobile": {
+      "breakpoint": 480,
+      "settings": {
+        "slidesToShow": 1,
+        "arrows": false,
+        "dots": true
+      }
+    }
+  },
+  "demo": {
+    "slides": [
+      {
+        "title": "Beautiful Carousel Slide",
+        "description": "This is a stunning carousel slide with smooth transitions and elegant design.",
+        "image": {
+          "url": "https://via.placeholder.com/800x400/007cba/ffffff?text=Slide+1",
+          "alt": "Demo slide 1"
+        },
+        "button": {
+          "text": "Learn More",
+          "url": "#",
+          "target": "_self"
+        }
+      },
+      {
+        "title": "Amazing Content Display",
+        "description": "Showcase your content with this professional carousel slider that adapts to any design.",
+        "image": {
+          "url": "https://via.placeholder.com/800x400/28a745/ffffff?text=Slide+2",
+          "alt": "Demo slide 2"
+        },
+        "button": {
+          "text": "Discover More",
+          "url": "#",
+          "target": "_self"
+        }
+      },
+      {
+        "title": "Perfect for Any Website",
+        "description": "Whether it's a business site, portfolio, or blog, this carousel fits perfectly.",
+        "image": {
+          "url": "https://via.placeholder.com/800x400/dc3545/ffffff?text=Slide+3",
+          "alt": "Demo slide 3"
+        },
+        "button": {
+          "text": "Get Started",
+          "url": "#",
+          "target": "_self"
+        }
+      }
+    ]
+  },
+  "features": [
+    "Smooth horizontal transitions",
+    "Responsive design",
+    "Touch/swipe support",
+    "Keyboard navigation",
+    "Lazy loading",
+    "Customizable arrows and dots",
+    "Multiple slides per view",
+    "Center mode support",
+    "Variable width slides",
+    "RTL language support"
+  ],
+  "compatibility": {
+    "gutenberg": true,
+    "elementor": true,
+    "shortcode": true,
+    "widget": true
+  },
+  "performance": {
+    "lazyLoad": true,
+    "optimizedCSS": true,
+    "minimalJS": true,
+    "mobileOptimized": true
+  }
+}

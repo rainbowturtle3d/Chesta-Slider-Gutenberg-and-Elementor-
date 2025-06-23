@@ -1,0 +1,455 @@
+/**
+ * Hero Slider Styles
+ * Full-width hero banner with stunning visual impact
+ */
+
+.chesta-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chesta-hero .chesta-track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.chesta-hero-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Handling */
+.chesta-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.chesta-hero-image,
+.chesta-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.chesta-hero-image img,
+.chesta-hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.chesta-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    z-index: 2;
+}
+
+/* Content Styling */
+.chesta-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.chesta-hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.chesta-hero-text {
+    color: white;
+    text-align: center;
+}
+
+.chesta-hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    color: #ffd700;
+}
+
+.chesta-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.chesta-hero-description {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Action Buttons */
+.chesta-hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.chesta-hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chesta-hero-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.chesta-hero-button:hover::before {
+    left: 100%;
+}
+
+.chesta-btn-primary {
+    background: linear-gradient(135deg, #007cba, #005a87);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 124, 186, 0.4);
+}
+
+.chesta-btn-primary:hover {
+    background: linear-gradient(135deg, #005a87, #004066);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 124, 186, 0.6);
+}
+
+.chesta-btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.chesta-btn-secondary:hover {
+    background: white;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Features List */
+.chesta-hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.chesta-hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.chesta-hero-feature i {
+    font-size: 1.1rem;
+    color: #ffd700;
+}
+
+/* Scroll Indicator */
+.chesta-hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.chesta-scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: bounce 2s infinite;
+}
+
+.chesta-scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Navigation Arrows */
+.chesta-hero .chesta-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.chesta-hero .chesta-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.chesta-hero .chesta-prev {
+    left: 2rem;
+}
+
+.chesta-hero .chesta-next {
+    right: 2rem;
+}
+
+/* Dots Navigation */
+.chesta-hero .chesta-dots {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.chesta-hero .chesta-dots li {
+    margin: 0;
+}
+
+.chesta-hero .chesta-dots button {
+    width: 4px;
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0;
+}
+
+.chesta-hero .chesta-dots .chesta-active button,
+.chesta-hero .chesta-dots button:hover {
+    background: white;
+    width: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .chesta-hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+    
+    .chesta-hero-description {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+    
+    .chesta-hero-features {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chesta-hero {
+        height: 70vh;
+    }
+    
+    .chesta-hero-content {
+        padding: 1.5rem;
+    }
+    
+    .chesta-hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chesta-hero-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .chesta-hero-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .chesta-hero .chesta-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .chesta-hero .chesta-prev {
+        left: 1rem;
+    }
+    
+    .chesta-hero .chesta-next {
+        right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chesta-hero {
+        height: 60vh;
+    }
+    
+    .chesta-hero-content {
+        padding: 1rem;
+    }
+    
+    .chesta-hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .chesta-hero-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .chesta-hero .chesta-arrow {
+        display: none;
+    }
+    
+    .chesta-hero .chesta-dots {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .chesta-scroll-indicator {
+        font-size: 0.7rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .chesta-hero-overlay {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .chesta-hero-overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .chesta-hero .chesta-arrow {
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .chesta-hero-button::before {
+        display: none;
+    }
+    
+    .chesta-scroll-indicator {
+        animation: none;
+    }
+    
+    .chesta-hero .chesta-track {
+        transition: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .chesta-hero {
+        height: auto;
+        min-height: 50vh;
+    }
+    
+    .chesta-hero .chesta-arrow,
+    .chesta-hero .chesta-dots,
+    .chesta-hero-scroll {
+        display: none;
+    }
+}
