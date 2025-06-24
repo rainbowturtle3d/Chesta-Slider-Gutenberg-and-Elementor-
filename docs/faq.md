@@ -505,7 +505,7 @@ Supported page builders:
    - [GitHub Discussions](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
 
 3. **Direct Support:**
-   - Email: support@chestaslider.com
+   - Email: tarulahsan@gmail.com
    - Response time: 24-48 hours
    - Include: WordPress version, PHP version, error messages
 
@@ -572,7 +572,7 @@ If you can't find the answer you're looking for:
 1. **Search Documentation:** Use the search function in our docs
 2. **Check GitHub:** Look through existing issues and discussions
 3. **Ask Community:** Post in WordPress.org support forum
-4. **Contact Us:** Email support@chestaslider.com
+4. **Contact Us:** Email tarulahsan@gmail.com
 
 **When contacting support, please include:**
 - WordPress version
