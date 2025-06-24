@@ -2,7 +2,7 @@
 
 [![WordPress Plugin Version](https://img.shields.io/badge/WordPress-5.0%2B-blue.svg)](https://wordpress.org/)
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-purple.svg)](https://php.net/)
-[![License](https://img.shields.io/badge/License-GPL%20v2%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](https://chesta-slider.com/license)
 [![Gutenberg Compatible](https://img.shields.io/badge/Gutenberg-Compatible-brightgreen.svg)](https://wordpress.org/gutenberg/)
 [![Elementor Compatible](https://img.shields.io/badge/Elementor-Compatible-pink.svg)](https://elementor.com/)
 
@@ -409,7 +409,9 @@ npm run build
 
 ## 📄 License
 
-This project is licensed under the GPL v2 or later - see the [LICENSE](LICENSE) file for details.
+This project is proprietary software. All rights reserved. See the [LICENSE](https://chesta-slider.com/license) for details.
+
+**Important:** This is not free software. Commercial use requires a valid license.
 
 ## 🙏 Acknowledgments
 
@@ -430,4 +432,3 @@ This project is licensed under the GPL v2 or later - see the [LICENSE](LICENSE) 
 **Made with ❤️ by [RainbowTurtle3D](https://github.com/rainbowturtle3d)**
 
 *Chesta Slider - Making WordPress sliders simple, powerful, and accessible for everyone.*
-

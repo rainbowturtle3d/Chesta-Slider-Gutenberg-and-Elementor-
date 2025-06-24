@@ -1,6 +1,6 @@
 /**
  * Admin Styles for Chesta Slider
- * Styles for the WordPress admin interface
+ * Modern 3D Dashboard with Colorful Design
  */
 
 /* Main Admin Container */
@@ -10,14 +10,83 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-/* Header Styles */
-.chesta-slider-header {
+/* Modern Dashboard Styles */
+.modern-dashboard {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Modern Header Styles */
+.modern-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 30px 20px;
-    margin: 0 0 30px -20px;
+    padding: 40px 20px;
+    margin: 0 0 40px -20px;
     margin-right: -20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+.shape-4 {
+    width: 40px;
+    height: 40px;
+    bottom: 20%;
+    left: 60%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
 }
 
 .chesta-slider-header-content {
@@ -28,26 +97,94 @@
     margin: 0 auto;
 }
 
-.chesta-slider-logo h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
+/* Modern Logo Styles */
+.modern-logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-.chesta-slider-logo .dashicons {
-    font-size: 2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
+.logo-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-icon .dashicons {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    color: white;
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .chesta-slider-tagline {
     margin: 10px 0 0 0;
-    font-size: 1.1rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    opacity: 0.95;
     font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern Version and Status */
+.modern-version {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.version-badge {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.status-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
 }
 
 .version-badge {
@@ -80,54 +217,214 @@
     gap: 20px;
 }
 
-/* Statistics Cards */
-.chesta-slider-stats {
+/* Modern 3D Statistics Cards */
+.modern-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 0 10px;
 }
 
-.stat-card {
+.modern-3d-card {
     background: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 1px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
-    gap: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 25px;
 }
 
-.stat-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.modern-3d-card:hover {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateY(-10px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.modern-3d-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Modern Icon Styles */
+.modern-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Gradient Backgrounds for Cards */
+.gradient-1 .modern-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-2 .modern-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-3 .modern-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gradient-4 .modern-icon {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Card Gradient Overlays */
+.gradient-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    pointer-events: none;
+}
+
+.gradient-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.05) 0%, rgba(245, 87, 108, 0.05) 100%);
+    pointer-events: none;
+}
+
+.gradient-3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.05) 0%, rgba(0, 242, 254, 0.05) 100%);
+    pointer-events: none;
+}
+
+.gradient-4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(67, 233, 123, 0.05) 0%, rgba(56, 249, 215, 0.05) 100%);
+    pointer-events: none;
+}
+
+/* Modern Icon Content */
+.modern-icon .dashicons {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
     color: white;
-    font-size: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-.stat-content h3 {
+/* Modern Stat Content */
+.stat-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-number {
+    margin: 0 0 8px 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    line-height: 1;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
     margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1e1e1e;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.stat-content p {
-    margin: 5px 0 0 0;
-    color: #666;
-    font-size: 0.9rem;
+/* Card Decorations */
+.card-decoration {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 4px;
+}
+
+.decoration-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.gradient-1 .decoration-dot {
+    background: #667eea;
+}
+
+.gradient-2 .decoration-dot {
+    background: #f093fb;
+}
+
+.gradient-3 .decoration-dot {
+    background: #4facfe;
+}
+
+.gradient-4 .decoration-dot {
+    background: #43e97b;
+}
+
+.dot-1 {
+    animation: dotPulse 2s infinite;
+}
+
+.dot-2 {
+    animation: dotPulse 2s infinite 0.3s;
+}
+
+.dot-3 {
+    animation: dotPulse 2s infinite 0.6s;
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
 /* Card Styles */
@@ -808,8 +1105,17 @@
     font-size: 1.2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* Modern Responsive Design */
+@media (max-width: 1200px) {
+    .modern-stats {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .modern-3d-card {
+        padding: 25px;
+    }
+    
     .chesta-slider-dashboard {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -821,24 +1127,68 @@
 }
 
 @media (max-width: 768px) {
-    .chesta-slider-header {
-        padding: 20px 15px;
-        margin-left: -15px;
-        margin-right: -15px;
+    .modern-dashboard {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .modern-header {
+        padding: 30px 15px;
+        margin: 0 0 30px -20px;
     }
     
     .chesta-slider-header-content {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
+        gap: 20px;
     }
     
-    .chesta-slider-logo h1 {
+    .modern-logo {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .chesta-slider-tagline {
+        font-size: 1rem;
+    }
+    
+    .modern-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 5px;
+    }
+    
+    .modern-3d-card {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .modern-3d-card:hover {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-5px);
+    }
+    
+    .stat-number {
         font-size: 2rem;
     }
     
-    .chesta-slider-stats {
-        grid-template-columns: 1fr;
+    .modern-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .modern-icon .dashicons {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .floating-shapes {
+        display: none;
     }
     
     .quick-start-steps {
@@ -871,20 +1221,42 @@
 }
 
 @media (max-width: 480px) {
-    .chesta-slider-header {
-        padding: 15px 10px;
-        margin-left: -10px;
-        margin-right: -10px;
+    .modern-header {
+        padding: 20px 10px;
+        margin: 0 0 20px -20px;
     }
     
-    .chesta-slider-logo h1 {
-        font-size: 1.5rem;
+    .logo-text h1 {
+        font-size: 1.8rem;
     }
     
-    .stat-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+    .chesta-slider-tagline {
+        font-size: 0.9rem;
+    }
+    
+    .modern-3d-card {
+        padding: 15px;
+        border-radius: 15px;
+        gap: 12px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    .modern-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .modern-icon .dashicons {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
     }
     
     .card-content {
@@ -903,4 +1275,3 @@
         justify-content: center;
     }
 }
-

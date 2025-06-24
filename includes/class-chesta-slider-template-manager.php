@@ -80,109 +80,44 @@ class Chesta_Slider_Template_Manager {
      */
     private function load_templates() {
         $this->templates = array(
-            // Basic Sliders
+            // Image Sliders (5 types)
             'carousel' => array(
-                'name' => __('Carousel', 'chesta-slider'),
+                'name' => __('Classic Carousel', 'chesta-slider'),
                 'description' => __('Classic horizontal carousel with smooth transitions', 'chesta-slider'),
-                'category' => 'basic',
+                'category' => 'image',
                 'icon' => 'slides',
                 'premium' => false,
             ),
             'fade' => array(
-                'name' => __('Fade', 'chesta-slider'),
+                'name' => __('Fade Slider', 'chesta-slider'),
                 'description' => __('Elegant fade transitions between slides', 'chesta-slider'),
-                'category' => 'basic',
+                'category' => 'image',
                 'icon' => 'image-filter',
                 'premium' => false,
             ),
-            'vertical' => array(
-                'name' => __('Vertical', 'chesta-slider'),
-                'description' => __('Vertical sliding direction for unique layouts', 'chesta-slider'),
-                'category' => 'basic',
-                'icon' => 'sort',
-                'premium' => false,
-            ),
-            'gallery' => array(
-                'name' => __('Image Gallery', 'chesta-slider'),
-                'description' => __('Beautiful image gallery with lightbox support', 'chesta-slider'),
-                'category' => 'basic',
-                'icon' => 'format-gallery',
-                'premium' => false,
-            ),
-
-            // Advanced Sliders
-            'hero' => array(
-                'name' => __('Hero Slider', 'chesta-slider'),
-                'description' => __('Full-width hero banner with stunning visual impact', 'chesta-slider'),
-                'category' => 'advanced',
-                'icon' => 'cover-image',
-                'premium' => true,
-            ),
-            'parallax' => array(
-                'name' => __('Parallax', 'chesta-slider'),
-                'description' => __('Stunning parallax background effects', 'chesta-slider'),
-                'category' => 'advanced',
+            'cube' => array(
+                'name' => __('Cube Slider', 'chesta-slider'),
+                'description' => __('Stunning 3D cube transitions with perspective', 'chesta-slider'),
+                'category' => 'image',
                 'icon' => 'admin-page',
                 'premium' => true,
             ),
-            'thumbnail' => array(
-                'name' => __('Thumbnail Navigation', 'chesta-slider'),
-                'description' => __('Slider with thumbnail navigation preview', 'chesta-slider'),
-                'category' => 'advanced',
-                'icon' => 'grid-view',
+            'flip' => array(
+                'name' => __('Flip Slider', 'chesta-slider'),
+                'description' => __('Card flip effects with 3D transformations', 'chesta-slider'),
+                'category' => 'image',
+                'icon' => 'image-flip-horizontal',
                 'premium' => true,
             ),
-            'center' => array(
-                'name' => __('Center Mode', 'chesta-slider'),
-                'description' => __('Center active slide with partial view of others', 'chesta-slider'),
-                'category' => 'advanced',
-                'icon' => 'align-center',
-                'premium' => true,
-            ),
-            'multirow' => array(
-                'name' => __('Multi-row', 'chesta-slider'),
-                'description' => __('Multiple rows of slides for grid-like layouts', 'chesta-slider'),
-                'category' => 'advanced',
-                'icon' => 'grid-view',
-                'premium' => true,
-            ),
-            'variable' => array(
-                'name' => __('Variable Width', 'chesta-slider'),
-                'description' => __('Slides with different widths for dynamic layouts', 'chesta-slider'),
-                'category' => 'advanced',
-                'icon' => 'editor-expand',
+            'coverflow' => array(
+                'name' => __('Coverflow Slider', 'chesta-slider'),
+                'description' => __('iTunes-style coverflow with reflection effects', 'chesta-slider'),
+                'category' => 'image',
+                'icon' => 'images-alt2',
                 'premium' => true,
             ),
 
-            // Content-Specific Sliders
-            'testimonial' => array(
-                'name' => __('Testimonial', 'chesta-slider'),
-                'description' => __('Customer testimonials with author information', 'chesta-slider'),
-                'category' => 'content',
-                'icon' => 'format-quote',
-                'premium' => true,
-            ),
-            'logo' => array(
-                'name' => __('Logo Carousel', 'chesta-slider'),
-                'description' => __('Client and partner logo showcase', 'chesta-slider'),
-                'category' => 'content',
-                'icon' => 'admin-users',
-                'premium' => true,
-            ),
-            'product' => array(
-                'name' => __('Product Slider', 'chesta-slider'),
-                'description' => __('E-commerce product showcase with pricing', 'chesta-slider'),
-                'category' => 'content',
-                'icon' => 'products',
-                'premium' => true,
-            ),
-            'video' => array(
-                'name' => __('Video Slider', 'chesta-slider'),
-                'description' => __('Video content with YouTube/Vimeo support', 'chesta-slider'),
-                'category' => 'content',
-                'icon' => 'video-alt3',
-                'premium' => true,
-            ),
+            // Content Sliders (4 types)
             'post' => array(
                 'name' => __('Post Slider', 'chesta-slider'),
                 'description' => __('WordPress posts with excerpts and metadata', 'chesta-slider'),
@@ -191,91 +126,144 @@ class Chesta_Slider_Template_Manager {
                 'premium' => true,
             ),
             'portfolio' => array(
-                'name' => __('Portfolio', 'chesta-slider'),
+                'name' => __('Portfolio Slider', 'chesta-slider'),
                 'description' => __('Creative portfolio with filtering options', 'chesta-slider'),
                 'category' => 'content',
                 'icon' => 'portfolio',
                 'premium' => true,
             ),
+            'testimonial' => array(
+                'name' => __('Testimonial Slider', 'chesta-slider'),
+                'description' => __('Customer testimonials with author information', 'chesta-slider'),
+                'category' => 'content',
+                'icon' => 'format-quote',
+                'premium' => true,
+            ),
+            'mixed' => array(
+                'name' => __('Mixed Content Slider', 'chesta-slider'),
+                'description' => __('Any Gutenberg blocks in sliding format', 'chesta-slider'),
+                'category' => 'content',
+                'icon' => 'editor-table',
+                'premium' => true,
+            ),
 
-            // Interactive Sliders
-            'cube' => array(
-                'name' => __('3D Cube', 'chesta-slider'),
-                'description' => __('Stunning 3D cube transitions with perspective', 'chesta-slider'),
-                'category' => 'interactive',
-                'icon' => 'admin-page',
+            // Media Sliders (4 types)
+            'video' => array(
+                'name' => __('Video Slider', 'chesta-slider'),
+                'description' => __('Video content with YouTube/Vimeo support', 'chesta-slider'),
+                'category' => 'media',
+                'icon' => 'video-alt3',
                 'premium' => true,
             ),
-            'flip' => array(
-                'name' => __('Flip', 'chesta-slider'),
-                'description' => __('Card flip effects with 3D transformations', 'chesta-slider'),
-                'category' => 'interactive',
-                'icon' => 'image-flip-horizontal',
+            'gallery' => array(
+                'name' => __('Gallery Slider', 'chesta-slider'),
+                'description' => __('Beautiful image gallery with lightbox support', 'chesta-slider'),
+                'category' => 'media',
+                'icon' => 'format-gallery',
+                'premium' => false,
+            ),
+            'logo' => array(
+                'name' => __('Logo Carousel', 'chesta-slider'),
+                'description' => __('Client and partner logo showcase', 'chesta-slider'),
+                'category' => 'media',
+                'icon' => 'admin-users',
                 'premium' => true,
             ),
-            'coverflow' => array(
-                'name' => __('Coverflow', 'chesta-slider'),
-                'description' => __('iTunes-style coverflow with reflection effects', 'chesta-slider'),
-                'category' => 'interactive',
-                'icon' => 'images-alt2',
+            'audio' => array(
+                'name' => __('Audio Slider', 'chesta-slider'),
+                'description' => __('Audio playlist with waveform visualization', 'chesta-slider'),
+                'category' => 'media',
+                'icon' => 'format-audio',
                 'premium' => true,
             ),
-            'cards' => array(
-                'name' => __('Cards', 'chesta-slider'),
-                'description' => __('Card-based layout with stacking effects', 'chesta-slider'),
-                'category' => 'interactive',
-                'icon' => 'admin-page',
+
+            // Layout Sliders (4 types)
+            'hero' => array(
+                'name' => __('Full-width Hero', 'chesta-slider'),
+                'description' => __('Full-width hero banner with stunning visual impact', 'chesta-slider'),
+                'category' => 'layout',
+                'icon' => 'cover-image',
                 'premium' => true,
             ),
-            'countdown' => array(
-                'name' => __('Countdown', 'chesta-slider'),
-                'description' => __('Slides with integrated countdown timers', 'chesta-slider'),
-                'category' => 'interactive',
-                'icon' => 'clock',
+            'vertical' => array(
+                'name' => __('Vertical Slider', 'chesta-slider'),
+                'description' => __('Vertical sliding direction for unique layouts', 'chesta-slider'),
+                'category' => 'layout',
+                'icon' => 'sort',
+                'premium' => false,
+            ),
+            'multirow' => array(
+                'name' => __('Multi-row Slider', 'chesta-slider'),
+                'description' => __('Multiple rows of slides for grid-like layouts', 'chesta-slider'),
+                'category' => 'layout',
+                'icon' => 'grid-view',
                 'premium' => true,
             ),
+            'thumbnail' => array(
+                'name' => __('Thumbnail Navigation', 'chesta-slider'),
+                'description' => __('Slider with thumbnail navigation preview', 'chesta-slider'),
+                'category' => 'layout',
+                'icon' => 'grid-view',
+                'premium' => true,
+            ),
+
+            // Interactive Sliders (4 types)
             'cta' => array(
-                'name' => __('CTA Slider', 'chesta-slider'),
+                'name' => __('CTA Button Slider', 'chesta-slider'),
                 'description' => __('Call-to-action focused with conversion optimization', 'chesta-slider'),
                 'category' => 'interactive',
                 'icon' => 'megaphone',
                 'premium' => true,
             ),
+            'countdown' => array(
+                'name' => __('Countdown Timer', 'chesta-slider'),
+                'description' => __('Slides with integrated countdown timers', 'chesta-slider'),
+                'category' => 'interactive',
+                'icon' => 'clock',
+                'premium' => true,
+            ),
+            'parallax' => array(
+                'name' => __('Parallax Slider', 'chesta-slider'),
+                'description' => __('Stunning parallax background effects', 'chesta-slider'),
+                'category' => 'interactive',
+                'icon' => 'admin-page',
+                'premium' => true,
+            ),
+            'animated' => array(
+                'name' => __('Animated Text Overlay', 'chesta-slider'),
+                'description' => __('Text animations with stunning overlay effects', 'chesta-slider'),
+                'category' => 'interactive',
+                'icon' => 'editor-textcolor',
+                'premium' => true,
+            ),
 
-            // Specialized Sliders
-            'timeline' => array(
-                'name' => __('Timeline', 'chesta-slider'),
-                'description' => __('Chronological timeline with date markers', 'chesta-slider'),
-                'category' => 'specialized',
-                'icon' => 'backup',
+            // E-commerce Sliders (4 types)
+            'product' => array(
+                'name' => __('Product Slider', 'chesta-slider'),
+                'description' => __('E-commerce product showcase with pricing', 'chesta-slider'),
+                'category' => 'ecommerce',
+                'icon' => 'products',
                 'premium' => true,
             ),
-            'comparison' => array(
-                'name' => __('Before/After', 'chesta-slider'),
-                'description' => __('Before and after image comparison slider', 'chesta-slider'),
-                'category' => 'specialized',
-                'icon' => 'image-flip-horizontal',
+            'category' => array(
+                'name' => __('Category Slider', 'chesta-slider'),
+                'description' => __('Product categories with featured items', 'chesta-slider'),
+                'category' => 'ecommerce',
+                'icon' => 'category',
                 'premium' => true,
             ),
-            'pricing' => array(
-                'name' => __('Pricing Table', 'chesta-slider'),
-                'description' => __('Pricing plans with feature comparisons', 'chesta-slider'),
-                'category' => 'specialized',
-                'icon' => 'money-alt',
+            'featured' => array(
+                'name' => __('Featured Products', 'chesta-slider'),
+                'description' => __('Highlight best-selling and featured products', 'chesta-slider'),
+                'category' => 'ecommerce',
+                'icon' => 'star-filled',
                 'premium' => true,
             ),
-            'team' => array(
-                'name' => __('Team Members', 'chesta-slider'),
-                'description' => __('Team member profiles with social links', 'chesta-slider'),
-                'category' => 'specialized',
-                'icon' => 'groups',
-                'premium' => true,
-            ),
-            'news' => array(
-                'name' => __('News Ticker', 'chesta-slider'),
-                'description' => __('Breaking news and announcements ticker', 'chesta-slider'),
-                'category' => 'specialized',
-                'icon' => 'megaphone',
+            'cart' => array(
+                'name' => __('Shopping Cart Slider', 'chesta-slider'),
+                'description' => __('Mini cart with sliding product recommendations', 'chesta-slider'),
+                'category' => 'ecommerce',
+                'icon' => 'cart',
                 'premium' => true,
             ),
         );

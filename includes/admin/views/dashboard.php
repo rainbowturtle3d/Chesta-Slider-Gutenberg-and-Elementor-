@@ -17,64 +17,102 @@ $quick_start = $this->get_quick_start_guide();
 $features = $this->get_feature_highlights();
 ?>
 
-<div class="wrap chesta-slider-admin">
-    <div class="chesta-slider-header">
-        <div class="chesta-slider-header-content">
-            <div class="chesta-slider-logo">
-                <h1>
-                    <span class="dashicons dashicons-slides"></span>
-                    <?php _e('Chesta Sliders', 'chesta-slider'); ?>
-                </h1>
-                <p class="chesta-slider-tagline">
-                    <?php _e('Create stunning, responsive sliders with 25+ premium templates', 'chesta-slider'); ?>
-                </p>
+<div class="wrap chesta-slider-admin modern-dashboard">
+    <div class="chesta-slider-header modern-header">
+        <div class="header-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
             </div>
-            <div class="chesta-slider-version">
+        </div>
+        <div class="chesta-slider-header-content">
+            <div class="chesta-slider-logo modern-logo">
+                <div class="logo-icon">
+                    <span class="dashicons dashicons-slides"></span>
+                </div>
+                <div class="logo-text">
+                    <h1><?php _e('Chesta Sliders', 'chesta-slider'); ?></h1>
+                    <p class="chesta-slider-tagline">
+                        <?php _e('Create stunning, responsive sliders with 25+ premium templates', 'chesta-slider'); ?>
+                    </p>
+                </div>
+            </div>
+            <div class="chesta-slider-version modern-version">
                 <span class="version-badge">v<?php echo esc_html($this->version); ?></span>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text"><?php _e('Active', 'chesta-slider'); ?></span>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="chesta-slider-dashboard">
         <!-- Statistics Cards -->
-        <div class="chesta-slider-stats">
-            <div class="stat-card">
-                <div class="stat-icon">
+        <div class="chesta-slider-stats modern-stats">
+            <div class="stat-card modern-3d-card gradient-1">
+                <div class="card-glow"></div>
+                <div class="stat-icon modern-icon">
                     <span class="dashicons dashicons-slides"></span>
                 </div>
                 <div class="stat-content">
-                    <h3><?php echo esc_html($stats['total_sliders']); ?></h3>
-                    <p><?php _e('Total Slider Types', 'chesta-slider'); ?></p>
+                    <h3 class="stat-number"><?php echo esc_html($stats['total_sliders']); ?></h3>
+                    <p class="stat-label"><?php _e('Total Slider Types', 'chesta-slider'); ?></p>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-dot dot-1"></div>
+                    <div class="decoration-dot dot-2"></div>
+                    <div class="decoration-dot dot-3"></div>
                 </div>
             </div>
             
-            <div class="stat-card">
-                <div class="stat-icon">
+            <div class="stat-card modern-3d-card gradient-2">
+                <div class="card-glow"></div>
+                <div class="stat-icon modern-icon">
                     <span class="dashicons dashicons-star-filled"></span>
                 </div>
                 <div class="stat-content">
-                    <h3><?php echo esc_html($stats['premium_sliders']); ?></h3>
-                    <p><?php _e('Premium Templates', 'chesta-slider'); ?></p>
+                    <h3 class="stat-number"><?php echo esc_html($stats['premium_sliders']); ?></h3>
+                    <p class="stat-label"><?php _e('Premium Templates', 'chesta-slider'); ?></p>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-dot dot-1"></div>
+                    <div class="decoration-dot dot-2"></div>
+                    <div class="decoration-dot dot-3"></div>
                 </div>
             </div>
             
-            <div class="stat-card">
-                <div class="stat-icon">
+            <div class="stat-card modern-3d-card gradient-3">
+                <div class="card-glow"></div>
+                <div class="stat-icon modern-icon">
                     <span class="dashicons dashicons-editor-table"></span>
                 </div>
                 <div class="stat-content">
-                    <h3><?php echo esc_html($stats['total_sliders']); ?></h3>
-                    <p><?php _e('Gutenberg Blocks', 'chesta-slider'); ?></p>
+                    <h3 class="stat-number"><?php echo esc_html($stats['total_sliders']); ?></h3>
+                    <p class="stat-label"><?php _e('Gutenberg Blocks', 'chesta-slider'); ?></p>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-dot dot-1"></div>
+                    <div class="decoration-dot dot-2"></div>
+                    <div class="decoration-dot dot-3"></div>
                 </div>
             </div>
             
-            <div class="stat-card">
-                <div class="stat-icon">
+            <div class="stat-card modern-3d-card gradient-4">
+                <div class="card-glow"></div>
+                <div class="stat-icon modern-icon">
                     <span class="dashicons dashicons-shortcode"></span>
                 </div>
                 <div class="stat-content">
-                    <h3><?php echo esc_html($stats['total_sliders'] + 1); ?></h3>
-                    <p><?php _e('Available Shortcodes', 'chesta-slider'); ?></p>
+                    <h3 class="stat-number"><?php echo esc_html($stats['total_sliders'] + 1); ?></h3>
+                    <p class="stat-label"><?php _e('Available Shortcodes', 'chesta-slider'); ?></p>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-dot dot-1"></div>
+                    <div class="decoration-dot dot-2"></div>
+                    <div class="decoration-dot dot-3"></div>
                 </div>
             </div>
         </div>
@@ -221,8 +259,8 @@ $features = $this->get_feature_highlights();
                             <?php _e('View Documentation', 'chesta-slider'); ?>
                         </a>
                         <a href="<?php echo admin_url('admin.php?page=chesta-sliders-tutorials'); ?>" class="action-button">
-                            <span class="dashicons dashicons-video-alt3"></span>
-                            <?php _e('Watch Tutorials', 'chesta-slider'); ?>
+                            <span class="dashicons dashicons-slides"></span>
+                            <?php _e('View Features & Sliders', 'chesta-slider'); ?>
                         </a>
                         <a href="<?php echo admin_url('admin.php?page=chesta-sliders-shortcodes'); ?>" class="action-button">
                             <span class="dashicons dashicons-shortcode"></span>
@@ -316,8 +354,8 @@ $features = $this->get_feature_highlights();
                             <?php _e('Documentation', 'chesta-slider'); ?>
                         </a>
                         <a href="<?php echo admin_url('admin.php?page=chesta-sliders-tutorials'); ?>" class="support-link">
-                            <span class="dashicons dashicons-video-alt2"></span>
-                            <?php _e('Video Tutorials', 'chesta-slider'); ?>
+                            <span class="dashicons dashicons-slides"></span>
+                            <?php _e('Features & Sliders', 'chesta-slider'); ?>
                         </a>
                     </div>
                 </div>
@@ -325,4 +363,3 @@ $features = $this->get_feature_highlights();
         </div>
     </div>
 </div>
-
