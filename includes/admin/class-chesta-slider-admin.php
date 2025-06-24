@@ -87,8 +87,14 @@ class Chesta_Slider_Admin {
 
     /**
      * Add plugin admin menu.
+     * DEPRECATED: Legacy admin menu - now using Chesta_Slider_Admin_Menu class
      */
     public function add_plugin_admin_menu() {
+        // Legacy admin menu has been replaced by Chesta_Slider_Admin_Menu
+        // This method is kept for backward compatibility but does nothing
+        return;
+        
+        /*
         // Main menu page
         add_menu_page(
             __('Chesta Slider', 'chesta-slider'),
@@ -129,6 +135,7 @@ class Chesta_Slider_Admin {
             $this->plugin_name . '-help',
             array($this, 'display_plugin_help_page')
         );
+        */
     }
 
     /**
@@ -488,4 +495,3 @@ class Chesta_Slider_Admin {
         }
     }
 }
-

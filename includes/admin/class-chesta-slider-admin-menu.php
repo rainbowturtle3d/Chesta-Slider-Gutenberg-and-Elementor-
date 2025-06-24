@@ -110,11 +110,11 @@ class Chesta_Slider_Admin_Menu {
             array($this, 'display_documentation_page')
         );
 
-        // Tutorials submenu
+        // Features & Sliders submenu
         add_submenu_page(
             'chesta-sliders',
-            __('Tutorials', 'chesta-slider'),
-            __('Tutorials', 'chesta-slider'),
+            __('Features & Sliders', 'chesta-slider'),
+            __('Features & Sliders', 'chesta-slider'),
             'manage_options',
             'chesta-sliders-tutorials',
             array($this, 'display_tutorials_page')
@@ -206,7 +206,7 @@ class Chesta_Slider_Admin_Menu {
     }
 
     /**
-     * Display tutorials page.
+     * Display features & sliders page.
      */
     public function display_tutorials_page() {
         include CHESTA_SLIDER_PLUGIN_DIR . 'includes/admin/views/tutorials.php';
@@ -351,4 +351,3 @@ class Chesta_Slider_Admin_Menu {
         );
     }
 }
-

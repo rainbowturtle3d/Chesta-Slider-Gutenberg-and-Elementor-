@@ -221,8 +221,8 @@ $features = $this->get_feature_highlights();
                             <?php _e('View Documentation', 'chesta-slider'); ?>
                         </a>
                         <a href="<?php echo admin_url('admin.php?page=chesta-sliders-tutorials'); ?>" class="action-button">
-                            <span class="dashicons dashicons-video-alt3"></span>
-                            <?php _e('Watch Tutorials', 'chesta-slider'); ?>
+                            <span class="dashicons dashicons-slides"></span>
+                            <?php _e('View Features & Sliders', 'chesta-slider'); ?>
                         </a>
                         <a href="<?php echo admin_url('admin.php?page=chesta-sliders-shortcodes'); ?>" class="action-button">
                             <span class="dashicons dashicons-shortcode"></span>
@@ -316,8 +316,8 @@ $features = $this->get_feature_highlights();
                             <?php _e('Documentation', 'chesta-slider'); ?>
                         </a>
                         <a href="<?php echo admin_url('admin.php?page=chesta-sliders-tutorials'); ?>" class="support-link">
-                            <span class="dashicons dashicons-video-alt2"></span>
-                            <?php _e('Video Tutorials', 'chesta-slider'); ?>
+                            <span class="dashicons dashicons-slides"></span>
+                            <?php _e('Features & Sliders', 'chesta-slider'); ?>
                         </a>
                     </div>
                 </div>
@@ -325,4 +325,3 @@ $features = $this->get_feature_highlights();
         </div>
     </div>
 </div>
-
