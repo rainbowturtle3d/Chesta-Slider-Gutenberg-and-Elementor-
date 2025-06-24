@@ -37,6 +37,11 @@ $slider_types = array(
                 'name' => __('Flip Slider', 'chesta-slider'),
                 'description' => __('Dynamic flip animations with depth effects', 'chesta-slider'),
                 'features' => array('Flip animations', 'Perspective effects', 'Responsive design', 'Custom timing')
+            ),
+            array(
+                'name' => __('Coverflow Slider', 'chesta-slider'),
+                'description' => __('Apple-style coverflow effect with 3D perspective', 'chesta-slider'),
+                'features' => array('3D coverflow', 'Center focus', 'Smooth transitions', 'Touch navigation')
             )
         )
     ),
@@ -84,6 +89,11 @@ $slider_types = array(
                 'name' => __('Logo Carousel', 'chesta-slider'),
                 'description' => __('Client logos and brand showcases', 'chesta-slider'),
                 'features' => array('Brand logos', 'Hover effects', 'Link integration', 'Grayscale options')
+            ),
+            array(
+                'name' => __('Audio Slider', 'chesta-slider'),
+                'description' => __('Music and podcast sliders with audio controls', 'chesta-slider'),
+                'features' => array('Audio playback', 'Playlist support', 'Waveform display', 'Volume controls')
             )
         )
     ),
@@ -157,6 +167,11 @@ $slider_types = array(
                 'name' => __('Featured Products Slider', 'chesta-slider'),
                 'description' => __('Highlight special offers and featured items', 'chesta-slider'),
                 'features' => array('Featured products', 'Special offers', 'Discount badges', 'Quick view')
+            ),
+            array(
+                'name' => __('Shopping Cart Slider', 'chesta-slider'),
+                'description' => __('Recently viewed and recommended products', 'chesta-slider'),
+                'features' => array('Recently viewed', 'Recommendations', 'Quick add to cart', 'Price comparison')
             )
         )
     )
@@ -710,4 +725,3 @@ function createSlider(sliderType) {
     window.open('<?php echo admin_url('post-new.php'); ?>', '_blank');
 }
 </script>
-

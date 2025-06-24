@@ -6,8 +6,8 @@
  * Version: 1.0.0
  * Author: RainbowTurtle3D
  * Author URI: https://github.com/rainbowturtle3d
- * License: GPL v2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * License: Proprietary
+ * License URI: https://chesta-slider.com/license
  * Text Domain: chesta-slider
  * Domain Path: /languages
  * Requires at least: 5.0
@@ -87,4 +87,3 @@ function run_chesta_slider() {
 }
 
 run_chesta_slider();
-

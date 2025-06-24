@@ -67,23 +67,52 @@ class Chesta_Slider_Gutenberg {
     }
 
     /**
-     * Register the Chesta Sliders block category.
+     * Register the Chesta Sliders block categories.
      *
      * @param array $categories Existing block categories.
      * @param WP_Block_Editor_Context $editor_context Block editor context.
      * @return array Modified block categories.
      */
     public function register_block_category($categories, $editor_context) {
-        return array_merge(
+        $chesta_categories = array(
             array(
-                array(
-                    'slug'  => 'chesta-sliders',
-                    'title' => __('Chesta Sliders', 'chesta-slider'),
-                    'icon'  => 'slides',
-                ),
+                'slug'  => 'chesta-sliders',
+                'title' => __('🎨 Chesta Sliders', 'chesta-slider'),
+                'icon'  => 'slides',
             ),
-            $categories
+            array(
+                'slug'  => 'chesta-image-sliders',
+                'title' => __('🖼️ Image Sliders', 'chesta-slider'),
+                'icon'  => 'format-gallery',
+            ),
+            array(
+                'slug'  => 'chesta-content-sliders',
+                'title' => __('📝 Content Sliders', 'chesta-slider'),
+                'icon'  => 'admin-post',
+            ),
+            array(
+                'slug'  => 'chesta-media-sliders',
+                'title' => __('🎬 Media Sliders', 'chesta-slider'),
+                'icon'  => 'video-alt3',
+            ),
+            array(
+                'slug'  => 'chesta-layout-sliders',
+                'title' => __('📐 Layout Sliders', 'chesta-slider'),
+                'icon'  => 'grid-view',
+            ),
+            array(
+                'slug'  => 'chesta-interactive-sliders',
+                'title' => __('⚡ Interactive Sliders', 'chesta-slider'),
+                'icon'  => 'admin-page',
+            ),
+            array(
+                'slug'  => 'chesta-ecommerce-sliders',
+                'title' => __('🛒 E-commerce Sliders', 'chesta-slider'),
+                'icon'  => 'products',
+            ),
         );
+        
+        return array_merge($chesta_categories, $categories);
     }
 
     /**
@@ -110,6 +139,7 @@ class Chesta_Slider_Gutenberg {
      */
     private function register_single_block($type, $template) {
         $block_name = "chesta-slider/{$type}";
+        $category = $this->get_block_category($template['category']);
         
         register_block_type($block_name, array(
             'attributes' => $this->get_block_attributes($type),
@@ -117,7 +147,27 @@ class Chesta_Slider_Gutenberg {
             'editor_script' => 'chesta-slider-blocks',
             'editor_style' => 'chesta-slider-blocks-editor',
             'style' => 'chesta-slider-blocks-style',
+            'category' => $category,
         ));
+    }
+
+    /**
+     * Get the Gutenberg block category for a template category.
+     *
+     * @param string $template_category Template category.
+     * @return string Block category slug.
+     */
+    private function get_block_category($template_category) {
+        $category_map = array(
+            'image' => 'chesta-image-sliders',
+            'content' => 'chesta-content-sliders',
+            'media' => 'chesta-media-sliders',
+            'layout' => 'chesta-layout-sliders',
+            'interactive' => 'chesta-interactive-sliders',
+            'ecommerce' => 'chesta-ecommerce-sliders',
+        );
+        
+        return isset($category_map[$template_category]) ? $category_map[$template_category] : 'chesta-sliders';
     }
 
     /**
@@ -649,4 +699,3 @@ class Chesta_Slider_Gutenberg {
         wp_add_inline_script('chesta-slider-blocks-style', $js);
     }
 }
-
