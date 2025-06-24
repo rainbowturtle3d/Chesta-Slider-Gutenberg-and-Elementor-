@@ -425,7 +425,7 @@ This project is proprietary software. All rights reserved. See the [LICENSE](htt
 - **Documentation**: [Full Documentation](docs/)
 - **Issues**: [GitHub Issues](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
-- **Email**: support@chestaslider.com
+- **Email**: tarulahsan@gmail.com
 
 ---
 

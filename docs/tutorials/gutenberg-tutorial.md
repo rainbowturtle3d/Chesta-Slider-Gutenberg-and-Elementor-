@@ -588,5 +588,5 @@ Congratulations! You've mastered Chesta Slider's Gutenberg integration. Here's w
 
 ---
 
-**Need Help?** Check our [FAQ](../faq.md) or [contact support](mailto:support@chestaslider.com)!
+**Need Help?** Check our [FAQ](../faq.md) or [contact support](mailto:tarulahsan@gmail.com)!
 

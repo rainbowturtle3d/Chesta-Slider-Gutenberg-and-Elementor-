@@ -372,7 +372,7 @@ If you encounter issues during installation:
    - [GitHub Discussions](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
 
 3. **Contact Support**
-   - Email: support@chestaslider.com
+   - Email: tarulahsan@gmail.com
    - Include: WordPress version, PHP version, error messages, screenshots
 
 ---
