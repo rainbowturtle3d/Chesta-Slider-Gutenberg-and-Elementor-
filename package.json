@@ -31,16 +31,16 @@
     "accessibility",
     "performance"
   ],
-  "author": "RainbowTurtle3D",
+  "author": "Tarul Ahsan <tarulahsan@gmail.com>",
   "license": "GPL-2.0-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-.git"
+    "url": "https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-.git"
   },
   "bugs": {
-    "url": "https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/issues"
+    "url": "https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/issues"
   },
-  "homepage": "https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-#readme",
+  "homepage": "https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-#readme",
   "devDependencies": {
     "@wordpress/scripts": "^26.19.0"
   },
@@ -63,4 +63,3 @@
     "extends @wordpress/browserslist-config"
   ]
 }
-

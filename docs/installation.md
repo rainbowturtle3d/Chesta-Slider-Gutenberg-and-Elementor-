@@ -37,7 +37,7 @@ Before installing Chesta Slider, ensure your system meets these requirements:
 
 2. **Search for Plugin**
    - In the search box, type "Chesta Slider"
-   - Look for the plugin by RainbowTurtle3D
+   - Look for the plugin by Tarul Ahsan
 
 3. **Install Plugin**
    - Click **Install Now** button
@@ -71,7 +71,7 @@ Before installing Chesta Slider, ensure your system meets these requirements:
 1. **Clone Repository**
    ```bash
    cd /path/to/wordpress/wp-content/plugins/
-   git clone https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-.git chesta-slider
+   git clone https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-.git chesta-slider
    ```
 
 2. **Install Dependencies**
@@ -368,8 +368,8 @@ If you encounter issues during installation:
 
 2. **Community Support**
    - [WordPress.org Support Forum](https://wordpress.org/support/plugin/chesta-slider/)
-   - [GitHub Issues](https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/issues)
-   - [GitHub Discussions](https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
+   - [GitHub Issues](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/issues)
+   - [GitHub Discussions](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
 
 3. **Contact Support**
    - Email: support@chestaslider.com

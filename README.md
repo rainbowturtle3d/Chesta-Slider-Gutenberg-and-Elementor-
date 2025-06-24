@@ -45,7 +45,7 @@
 ### GitHub Installation (Developers)
 ```bash
 cd wp-content/plugins/
-git clone https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-.git chesta-slider
+git clone https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-.git chesta-slider
 cd chesta-slider
 npm install
 npm run build
@@ -380,7 +380,7 @@ We welcome contributions! Here's how you can help:
 ### **Development Setup**
 ```bash
 # Clone the repository
-git clone https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-.git
+git clone https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-.git
 
 # Install dependencies
 cd Chesta-Slider-Gutenberg-and-Elementor-
@@ -423,12 +423,12 @@ This project is proprietary software. All rights reserved. See the [LICENSE](htt
 ## 📞 Support
 
 - **Documentation**: [Full Documentation](docs/)
-- **Issues**: [GitHub Issues](https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
+- **Issues**: [GitHub Issues](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
 - **Email**: support@chestaslider.com
 
 ---
 
-**Made with ❤️ by [RainbowTurtle3D](https://github.com/rainbowturtle3d)**
+**Made with ❤️ by [Tarul Ahsan](https://github.com/tarulahsan)**
 
 *Chesta Slider - Making WordPress sliders simple, powerful, and accessible for everyone.*

@@ -173,6 +173,71 @@ if (!defined('ABSPATH')) {
                     </div>
                 </div>
 
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <span class="dashicons dashicons-arrow-right-alt2"></span>
+                        <?php _e('Why is my slider not displaying correctly?', 'chesta-slider'); ?>
+                    </h3>
+                    <div class="faq-answer">
+                        <p><?php _e('Common display issues and solutions:', 'chesta-slider'); ?></p>
+                        <ul>
+                            <li><?php _e('Check if your theme has CSS conflicts - try switching to a default theme temporarily', 'chesta-slider'); ?></li>
+                            <li><?php _e('Ensure the container has sufficient width and height', 'chesta-slider'); ?></li>
+                            <li><?php _e('Verify that JavaScript is enabled in your browser', 'chesta-slider'); ?></li>
+                            <li><?php _e('Clear your browser cache and any caching plugins', 'chesta-slider'); ?></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <span class="dashicons dashicons-arrow-right-alt2"></span>
+                        <?php _e('How do I fix slow loading sliders?', 'chesta-slider'); ?>
+                    </h3>
+                    <div class="faq-answer">
+                        <p><?php _e('Performance optimization tips:', 'chesta-slider'); ?></p>
+                        <ul>
+                            <li><?php _e('Enable lazy loading in the slider settings', 'chesta-slider'); ?></li>
+                            <li><?php _e('Compress and optimize your images before uploading', 'chesta-slider'); ?></li>
+                            <li><?php _e('Use WebP format for better compression and faster loading', 'chesta-slider'); ?></li>
+                            <li><?php _e('Limit the number of slides to 10-15 for optimal performance', 'chesta-slider'); ?></li>
+                            <li><?php _e('Use a CDN for hosting images if possible', 'chesta-slider'); ?></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <span class="dashicons dashicons-arrow-right-alt2"></span>
+                        <?php _e('The slider is not responsive on mobile devices', 'chesta-slider'); ?>
+                    </h3>
+                    <div class="faq-answer">
+                        <p><?php _e('Mobile responsiveness solutions:', 'chesta-slider'); ?></p>
+                        <ul>
+                            <li><?php _e('Ensure your theme is mobile-responsive', 'chesta-slider'); ?></li>
+                            <li><?php _e('Check the slider width settings - use percentage instead of fixed pixels', 'chesta-slider'); ?></li>
+                            <li><?php _e('Enable touch/swipe navigation in slider settings', 'chesta-slider'); ?></li>
+                            <li><?php _e('Test different breakpoint settings for mobile devices', 'chesta-slider'); ?></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <span class="dashicons dashicons-arrow-right-alt2"></span>
+                        <?php _e('How do I troubleshoot JavaScript errors?', 'chesta-slider'); ?>
+                    </h3>
+                    <div class="faq-answer">
+                        <p><?php _e('JavaScript troubleshooting steps:', 'chesta-slider'); ?></p>
+                        <ul>
+                            <li><?php _e('Open browser developer tools (F12) and check the Console tab for errors', 'chesta-slider'); ?></li>
+                            <li><?php _e('Deactivate other plugins temporarily to check for conflicts', 'chesta-slider'); ?></li>
+                            <li><?php _e('Ensure jQuery is properly loaded by your theme', 'chesta-slider'); ?></li>
+                            <li><?php _e('Check if multiple slider plugins are conflicting with each other', 'chesta-slider'); ?></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -286,33 +351,33 @@ if (!defined('ABSPATH')) {
 
         <!-- Contact Support -->
         <div class="support-section contact-support">
-            <h2><span class="dashicons dashicons-email-alt"></span> <?php _e('Still Need Help?', 'chesta-slider'); ?></h2>
+            <h2><span class="dashicons dashicons-admin-tools"></span> <?php _e('Additional Resources', 'chesta-slider'); ?></h2>
             <div class="contact-content">
-                <p><?php _e('If you cannot find the answer to your question in our documentation or FAQ, we are here to help!', 'chesta-slider'); ?></p>
+                <p><?php _e('For additional support and resources, please check our documentation and tutorials above.', 'chesta-slider'); ?></p>
                 
                 <div class="contact-methods">
                     <div class="contact-method">
                         <div class="contact-icon">
-                            <span class="dashicons dashicons-email"></span>
+                            <span class="dashicons dashicons-book"></span>
                         </div>
                         <div class="contact-info">
-                            <h3><?php _e('Email Support', 'chesta-slider'); ?></h3>
-                            <p><?php _e('Send us an email with your question and we will get back to you within 24 hours.', 'chesta-slider'); ?></p>
-                            <a href="mailto:support@chesta-slider.com" class="button button-primary">
-                                <?php _e('Send Email', 'chesta-slider'); ?>
+                            <h3><?php _e('Documentation', 'chesta-slider'); ?></h3>
+                            <p><?php _e('Comprehensive guides and tutorials to help you get the most out of Chesta Slider.', 'chesta-slider'); ?></p>
+                            <a href="<?php echo admin_url('admin.php?page=chesta-slider-tutorials'); ?>" class="button button-primary">
+                                <?php _e('View Documentation', 'chesta-slider'); ?>
                             </a>
                         </div>
                     </div>
 
                     <div class="contact-method">
                         <div class="contact-icon">
-                            <span class="dashicons dashicons-admin-comments"></span>
+                            <span class="dashicons dashicons-admin-generic"></span>
                         </div>
                         <div class="contact-info">
-                            <h3><?php _e('Community Forum', 'chesta-slider'); ?></h3>
-                            <p><?php _e('Join our community forum to ask questions and share experiences with other users.', 'chesta-slider'); ?></p>
-                            <a href="#" class="button button-secondary">
-                                <?php _e('Visit Forum', 'chesta-slider'); ?>
+                            <h3><?php _e('Plugin Settings', 'chesta-slider'); ?></h3>
+                            <p><?php _e('Configure and customize your slider settings to match your needs.', 'chesta-slider'); ?></p>
+                            <a href="<?php echo admin_url('admin.php?page=chesta-slider-settings'); ?>" class="button button-secondary">
+                                <?php _e('Go to Settings', 'chesta-slider'); ?>
                             </a>
                         </div>
                     </div>
@@ -688,4 +753,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-
