@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Chesta Slider - Gutenberg & Elementor
- * Plugin URI: https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-
+ * Plugin URI: https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-
  * Description: A powerful, lightweight, and fully customizable slider plugin for Gutenberg and Elementor with 25+ slider types. No jQuery dependency, modern React-based interface, and seamless theme integration.
  * Version: 1.0.0
- * Author: RainbowTurtle3D
- * Author URI: https://github.com/rainbowturtle3d
+ * Author: Tarul Ahsan
+ * Author URI: mailto:tarulahsan@gmail.com
  * License: Proprietary
  * License URI: https://chesta-slider.com/license
  * Text Domain: chesta-slider

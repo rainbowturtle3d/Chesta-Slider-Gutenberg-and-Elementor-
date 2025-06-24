@@ -97,7 +97,7 @@ Recommended:
 
 3. **GitHub (Developers):**
    ```bash
-   git clone https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-.git
+   git clone https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-.git
    ```
 
 ### **Q: Do I need to configure anything after installation?**
@@ -501,8 +501,8 @@ Supported page builders:
 
 2. **Community Support:**
    - [WordPress.org Forum](https://wordpress.org/support/plugin/chesta-slider/)
-   - [GitHub Issues](https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/issues)
-   - [GitHub Discussions](https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
+   - [GitHub Issues](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/issues)
+   - [GitHub Discussions](https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-/discussions)
 
 3. **Direct Support:**
    - Email: support@chestaslider.com
@@ -528,7 +528,7 @@ Supported page builders:
 
 3. **Getting Started:**
    ```bash
-   git clone https://github.com/rainbowturtle3d/Chesta-Slider-Gutenberg-and-Elementor-.git
+   git clone https://github.com/tarulahsan/Chesta-Slider-Gutenberg-and-Elementor-.git
    cd Chesta-Slider-Gutenberg-and-Elementor-
    npm install
    npm run dev
